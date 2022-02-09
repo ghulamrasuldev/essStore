@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.example.essstore.common.Common.DISPLAY_TIME_SHORT
 import com.example.essstore.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, WelcomeScreen::class.java)
             startActivity(intent)
             finish()
-        },1000)
+        },DISPLAY_TIME_SHORT)
     }
 
     //This function is responsible to apply animation on screen

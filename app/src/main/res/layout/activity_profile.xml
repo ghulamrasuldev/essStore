@@ -10,7 +10,7 @@
     tools:context=".view.WelcomeScreen">
 
     <ImageView
-        android:id="@+id/_btn_back"
+        android:id="@+id/_btn_profile_screen_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_back"
@@ -124,6 +124,12 @@
             android:textSize="16sp"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/white"/>
+
+        <Spinner
+            android:id="@+id/_spinner_profile_screen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_edit_text"/>
 
         <EditText
             android:id="@+id/_et_profile_screen_gender"

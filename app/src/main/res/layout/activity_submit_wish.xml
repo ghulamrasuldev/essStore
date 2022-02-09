@@ -23,7 +23,7 @@
         android:gravity="center"
         android:fontFamily="@font/montserrat_bold"
         android:textSize="24sp"
-        android:text="Login to your Account"/>
+        android:text="Submit a Product"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,13 +35,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Email"
+            android:text="Product Name"
             android:textSize="16sp"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/white"/>
 
         <EditText
-            android:id="@+id/_et_login_screen_email"
+            android:id="@+id/_et_submit_wish_screen_product_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
@@ -52,21 +52,41 @@
             android:padding="16dp"
             android:background="@drawable/bg_edit_text"/>
 
-        <!--Password-->
+        <!--Brand name-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Password"
+            android:text="Brand Name"
             android:textSize="16sp"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/white"/>
 
         <EditText
-            android:id="@+id/_et_profile_screen_user_name"
+            android:id="@+id/_et_submit_wish_screen_brand_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="password"
-            android:inputType="textPassword"
+            android:hint="Brand Name"
+            android:gravity="center"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginBottom="4dp"
+            android:padding="16dp"
+            android:background="@drawable/bg_edit_text"/>
+
+        <!--Product URL-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Product URL"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat_bold"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/_et_submit_wish_screen_product_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Brand Name"
             android:gravity="center"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/montserrat"
@@ -83,17 +103,9 @@
             android:textColor="@color/white"
             android:fontFamily="@font/montserrat"
             android:padding="16dp"
-            android:text="Login"
+            android:text="SUBMIT"
             android:background="@drawable/bg_button_ripple_effect"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:fontFamily="@font/montserrat"
-            android:textSize="12sp"
-            android:text="Don't have account? Click here!"
-            android:textColor="@color/white"/>
     </LinearLayout>
 
 </LinearLayout>

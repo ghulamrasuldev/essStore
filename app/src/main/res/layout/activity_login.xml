@@ -32,48 +32,6 @@
         android:layout_marginTop="16dp"
         android:orientation="vertical">
 
-        <!--Name-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Name"
-            android:textSize="16sp"
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/white"/>
-        
-        <EditText
-            android:id="@+id/_et_profile_screen_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Your Name Here"
-            android:gravity="center"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/montserrat"
-            android:layout_marginBottom="4dp"
-            android:padding="16dp"
-            android:background="@drawable/bg_edit_text"/>
-
-        <!--User Name-->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="User Name"
-            android:textSize="16sp"
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/white"/>
-
-        <EditText
-            android:id="@+id/_et_profile_screen_user_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Your User Name Here"
-            android:gravity="center"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/montserrat"
-            android:layout_marginBottom="4dp"
-            android:padding="16dp"
-            android:background="@drawable/bg_edit_text"/>
-
         <!--Email-->
         <TextView
             android:layout_width="match_parent"
@@ -84,10 +42,10 @@
             android:textColor="@color/white"/>
 
         <EditText
-            android:id="@+id/_et_profile_screen_email"
+            android:id="@+id/_et_login_screen_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Your Email Here"
+            android:hint="Email"
             android:gravity="center"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/montserrat"
@@ -95,20 +53,21 @@
             android:padding="16dp"
             android:background="@drawable/bg_edit_text"/>
 
-        <!--Phone-->
+        <!--Password-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Phone"
+            android:text="Password"
             android:textSize="16sp"
             android:fontFamily="@font/montserrat_bold"
             android:textColor="@color/white"/>
 
         <EditText
-            android:id="@+id/_et_profile_screen_phone"
+            android:id="@+id/_et_profile_screen_user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Your Phone Here"
+            android:hint="password"
+            android:inputType="textPassword"
             android:gravity="center"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/montserrat"
@@ -116,26 +75,17 @@
             android:padding="16dp"
             android:background="@drawable/bg_edit_text"/>
 
-        <!--Gender-->
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/_btn_login_screen_login"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Gender"
-            android:textSize="16sp"
-            android:fontFamily="@font/montserrat_bold"
-            android:textColor="@color/white"/>
-
-        <EditText
-            android:id="@+id/_et_profile_screen_gender"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Your Gender Here"
-            android:gravity="center"
-            android:layout_marginTop="4dp"
+            android:textColor="@color/white"
             android:fontFamily="@font/montserrat"
-            android:layout_marginBottom="4dp"
             android:padding="16dp"
-            android:background="@drawable/bg_edit_text"/>
+            android:text="Login"
+            android:background="@drawable/bg_button_ripple_effect"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -143,19 +93,8 @@
             android:gravity="center"
             android:fontFamily="@font/montserrat"
             android:textSize="12sp"
-            android:text="This Account was created on 01/01/2022"
+            android:text="Don't have account? Click here!"
             android:textColor="@color/white"/>
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_marginTop="4dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:fontFamily="@font/montserrat"
-            android:padding="16dp"
-            android:text="Update Information"
-            android:background="@drawable/bg_button_ripple_effect"/>
-
     </LinearLayout>
 
 </LinearLayout>

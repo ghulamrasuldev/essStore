@@ -48,19 +48,25 @@
             android:src="@drawable/ic_welcome"/>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/_btn_welcome_screen_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button_ripple_effect"
             android:layout_margin="4dp"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/white"
             style="@style/Widget.AppCompat.Button.Colored"
             android:elevation="5dp"
             android:text="Login"/>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/_btn_welcome_screen_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_button_ripple_effect"
             android:layout_margin="4dp"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/white"
             android:elevation="5dp"
             android:text="Signup"/>
 

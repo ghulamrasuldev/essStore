@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EssStore">
         <activity
+            android:name=".view.Login"
+            android:exported="true" />
+        <activity
             android:name=".view.Profile"
             android:exported="true" />
         <activity

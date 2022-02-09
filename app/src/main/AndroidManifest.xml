@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EssStore">
         <activity
-            android:name=".WelcomeScreen"
+            android:name=".view.Profile"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.WelcomeScreen"
+            android:exported="true" />
+        <activity
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

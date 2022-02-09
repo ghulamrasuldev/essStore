@@ -1,7 +1,8 @@
-package com.example.essstore
+package com.example.essstore.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.essstore.R
 
 class WelcomeScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

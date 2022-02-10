@@ -16,8 +16,6 @@ import android.R
 
 
 class FinalReview : AppCompatActivity() {
-    lateinit var notificationManager: NotificationManager
-
     private lateinit var binding: ActivityFinalReviewBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

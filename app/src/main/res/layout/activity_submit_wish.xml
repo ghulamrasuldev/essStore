@@ -6,7 +6,7 @@
     android:background="@color/primary_color"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".view.WelcomeScreen">
+    tools:context=".view.SubmitWish">
 
     <ImageView
         android:id="@+id/_btn_login_screen_back"

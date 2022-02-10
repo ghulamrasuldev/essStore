@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EssStore">
         <activity
+            android:name=".view.HotProducts"
+            android:exported="true" />
+        <activity
+            android:name=".view.LatestProducts"
+            android:exported="true" />
+        <activity
             android:name=".view.NotificationView"
             android:exported="true" />
         <activity

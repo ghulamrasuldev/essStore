@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_color_bg"
+    android:padding="16dp"
+    android:layout_margin="4dp"
+    android:orientation="vertical">
+
+    <!--Product Name-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Product Name: "
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:background="@drawable/text_background_stroke"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Glasses"
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:background="@drawable/text_background_stroke"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <!--Product Price-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Product Price: "
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:background="@drawable/text_background_stroke"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="$45"
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:background="@drawable/text_background_stroke"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <!--Product Price-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Product Quantity: "
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:background="@drawable/text_background_stroke"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:background="@drawable/text_background_stroke"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+</LinearLayout>

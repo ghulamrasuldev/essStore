@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EssStore">
         <activity
+            android:name=".view.NotificationView"
+            android:exported="true" />
+        <activity
+            android:name=".view.FinalReview"
+            android:exported="true" />
+        <activity
             android:name=".view.OrderCreatedThankYou"
             android:exported="true" />
         <activity

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EssStore">
         <activity
+            android:name=".view.WishList"
+            android:exported="true" />
+        <activity
+            android:name=".view.CartScreen"
+            android:exported="true" />
+        <activity
             android:name=".view.FavouriteProducts"
             android:exported="true" />
         <activity

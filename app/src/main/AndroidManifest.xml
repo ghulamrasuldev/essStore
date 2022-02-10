@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EssStore">
         <activity
+            android:name=".view.FavouriteProducts"
+            android:exported="true" />
+        <activity
             android:name=".view.HotProducts"
             android:exported="true" />
         <activity

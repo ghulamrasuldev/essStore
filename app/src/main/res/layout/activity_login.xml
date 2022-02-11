@@ -23,7 +23,8 @@
         android:gravity="center"
         android:fontFamily="@font/montserrat_bold"
         android:textSize="24sp"
-        android:text="Login to your Account"/>
+        android:text="Login to your Account"
+        android:textColor="@color/white"/>
 
     <LinearLayout
         android:layout_width="match_parent"

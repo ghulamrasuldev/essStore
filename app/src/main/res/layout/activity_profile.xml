@@ -24,7 +24,8 @@
         android:gravity="center"
         android:fontFamily="@font/montserrat_bold"
         android:textSize="24sp"
-        android:text="Personal Profile"/>
+        android:text="Personal Profile"
+        android:textColor="@color/white"/>
 
     <LinearLayout
         android:layout_width="match_parent"

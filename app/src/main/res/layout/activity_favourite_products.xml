@@ -24,7 +24,8 @@
         android:gravity="center"
         android:fontFamily="@font/montserrat_bold"
         android:textSize="24sp"
-        android:text="Favourites"/>
+        android:text="Favourites"
+        android:textColor="@color/white"/>
 
     <LinearLayout
         android:layout_width="match_parent"

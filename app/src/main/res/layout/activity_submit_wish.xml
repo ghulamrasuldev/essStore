@@ -23,7 +23,8 @@
         android:gravity="center"
         android:fontFamily="@font/montserrat_bold"
         android:textSize="24sp"
-        android:text="Request a Product"/>
+        android:text="Request a Product"
+        android:textColor="@color/white"/>
 
     <LinearLayout
         android:layout_width="match_parent"

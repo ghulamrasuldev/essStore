@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_color_bg"
+    android:padding="8dp"
+    android:layout_margin="4dp"
+    android:orientation="vertical">
+
+    <!--Product Name-->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="@color/white"
+            android:src="@drawable/sampleimage"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="5"
+                    android:layout_height="wrap_content"
+                    android:text="Glasses"
+                    android:textSize="14sp"
+                    android:padding="4dp"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:text="$35"
+                    android:textSize="14sp"
+                    android:padding="4dp"
+                    android:fontFamily="@font/montserrat"
+                    android:textColor="@color/secondary_color"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                android:textSize="10sp"
+                android:maxLength="50"
+                android:padding="4dp"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/black"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/_btn_login_screen_login"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat"
+                android:textSize="12sp"
+                android:text="ADD to CART"
+                android:background="@drawable/bg_buttton_ripple_effect_small"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

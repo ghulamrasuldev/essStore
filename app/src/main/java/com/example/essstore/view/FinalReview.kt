@@ -11,8 +11,9 @@ import android.app.PendingIntent
 import androidx.core.app.NotificationCompat
 
 import android.R
-
-
+import android.os.Handler
+import android.os.Looper
+import com.example.essstore.common.Common
 
 
 class FinalReview : AppCompatActivity() {
@@ -21,5 +22,15 @@ class FinalReview : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFinalReviewBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        nextScreen()
+    }
+
+    private fun nextScreen() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, HotProducts::class.java)
+            startActivity(intent)
+            finish()
+        }, Common.DISPLAY_TIME_LONG)
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@drawable/card_color_bg"
-    android:padding="8dp"
+    android:layout_height="220dp"
+    android:background="@color/primary_color_accent"
+    android:padding="4dp"
     android:layout_margin="4dp"
     android:orientation="vertical">
 
@@ -15,6 +15,7 @@
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/box_product_card_image"
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:background="@color/white"
@@ -31,39 +32,41 @@
                 android:gravity="center">
 
                 <TextView
+                    android:id="@+id/box_product_card_title"
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="wrap_content"
                     android:text="Glasses"
+                    android:maxLength="10"
                     android:textSize="14sp"
-                    android:padding="4dp"
                     android:fontFamily="@font/montserrat"
                     android:textColor="@color/black"/>
 
                 <TextView
+                    android:id="@+id/box_product_card_price"
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
                     android:text="$35"
                     android:textSize="14sp"
-                    android:padding="4dp"
                     android:fontFamily="@font/montserrat"
                     android:textColor="@color/secondary_color"/>
 
             </LinearLayout>
 
             <TextView
+                android:id="@+id/box_product_card_description"
                 android:layout_width="150dp"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                 android:textSize="10sp"
                 android:maxLength="50"
-                android:padding="4dp"
                 android:fontFamily="@font/montserrat"
+                android:layout_marginBottom="4dp"
                 android:textColor="@color/black"/>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/_btn_login_screen_login"
+                android:id="@+id/box_product_card_add_to_cart"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:textColor="@color/white"

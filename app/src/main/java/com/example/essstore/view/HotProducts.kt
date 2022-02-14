@@ -1,8 +1,11 @@
 package com.example.essstore.view
 
 import android.content.ContentValues
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.widget.ProgressBar
 import androidx.core.view.isVisible
@@ -10,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.essstore.R
+import com.example.essstore.common.Common
 import com.example.essstore.common.Common.addData
 import com.example.essstore.common.Common.list
 import com.example.essstore.data.RetrofitInstance
@@ -27,7 +31,7 @@ class HotProducts : AppCompatActivity() {
         binding = ActivityHotProductsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setUpRecyclerView()
-        Log.d(TAG, "Runnig Fine")
+        Log.d(TAG, "Running Fine")
         lifecycleScope.launchWhenCreated {
             binding.hotProductsScreenProgressBar.isVisible = true
             val response= try {
@@ -45,6 +49,8 @@ class HotProducts : AppCompatActivity() {
                 productAdapter.products = response.body()!!
                 binding.hotProductsScreenProgressBar.isVisible = false
 
+                nextScreen()
+
                 Log.d(ContentValues.TAG, "$list")
                 Log.d(ContentValues.TAG, "${response.raw().request.url}")
             }
@@ -60,6 +66,13 @@ class HotProducts : AppCompatActivity() {
         productAdapter = SimpleProductsAdapter()
         adapter = productAdapter
         layoutManager = LinearLayoutManager(this@HotProducts)
+    }
 
+    private fun nextScreen() {
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this, LatestProducts::class.java)
+            startActivity(intent)
+            finish()
+        }, Common.DISPLAY_TIME_TOO_LONG)
     }
 }

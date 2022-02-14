@@ -4,24 +4,24 @@ package com.example.essstore.data
 import com.google.gson.annotations.SerializedName
 
 data class product(
-    @SerializedName("available_quantity")
+    @SerializedName("quantity")
     val availableQuantity: Int,
-    @SerializedName("Category")
+    @SerializedName("category")
     val category: String,
-    @SerializedName("date_created")
+    @SerializedName("created_at")
     val dateCreated: String,
     @SerializedName("discount")
     val discount: Int,
     @SerializedName("id")
     val id: Int,
-    @SerializedName("product_description")
+    @SerializedName("description")
     val productDescription: String,
-    @SerializedName("product_image")
+    @SerializedName("image")
     val productImage: String,
-    @SerializedName("product_name")
+    @SerializedName("title")
     val productName: String,
-    @SerializedName("product_price")
+    @SerializedName("price")
     val productPrice: Int,
-    @SerializedName("sold_quantity")
+    @SerializedName("sold_qt")
     val soldQuantity: Int
 )

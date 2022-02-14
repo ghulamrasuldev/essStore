@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.essstore.common.Common.API_KEY
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.SimpleProductsAdapter
 import com.example.essstore.databinding.ActivityPromotionsBinding
@@ -32,9 +33,9 @@ class Promotions : AppCompatActivity() {
         lifecycleScope.launchWhenCreated {
             binding.promotionsScreenProgressBar.isVisible = true
             val response= try {
-                RetrofitInstance.api.getTodos("57b501f0")
+                RetrofitInstance.api.getTodos()
             } catch (e: IOException){
-                Log.e(ContentValues.TAG, "IOException: You might not have internet connection!")
+                Log.e(ContentValues.TAG, "$e")
                 binding.promotionsScreenProgressBar.isVisible = false
                 return@launchWhenCreated
             }catch (e: HttpException){

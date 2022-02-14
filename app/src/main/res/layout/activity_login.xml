@@ -9,7 +9,7 @@
     tools:context=".view.Login">
 
     <ImageView
-        android:id="@+id/_btn_login_screen_back"
+        android:id="@+id/btn_login_screen_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_back"
@@ -42,7 +42,7 @@
             android:textColor="@color/white"/>
 
         <EditText
-            android:id="@+id/_et_login_screen_email"
+            android:id="@+id/et_login_screen_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
@@ -63,7 +63,7 @@
             android:textColor="@color/white"/>
 
         <EditText
-            android:id="@+id/_et_profile_screen_user_name"
+            android:id="@+id/et_profile_screen_user_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="password"
@@ -76,7 +76,7 @@
             android:background="@drawable/bg_edit_text"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/_btn_login_screen_login"
+            android:id="@+id/btn_login_screen_login"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:layout_width="match_parent"

@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.essstore.common.Common
+import com.example.essstore.common.Common.API_KEY
 import com.example.essstore.common.Common.nextScreenWithoutFinish
 import com.example.essstore.data.BoxProductsAdapter
 import com.example.essstore.data.RetrofitInstance
@@ -46,14 +47,14 @@ class HomeScreen : AppCompatActivity() {
             nextScreenWithoutFinish(this, Promotions::class.java)
         }
     }
-
+//"57b501f0"
     private fun fetchData(){
         lifecycleScope.launchWhenCreated {
             binding.homeScreenProgressBar.isVisible = true
             val response= try {
-                RetrofitInstance.api.getTodos("57b501f0")
+                RetrofitInstance.api.getTodos()
             } catch (e: IOException){
-                Log.e(ContentValues.TAG, "IOException: You might not have internet connection!")
+                Log.e(ContentValues.TAG, "IOException: You might not have internet connection! $e")
                 binding.homeScreenProgressBar.isVisible = false
                 return@launchWhenCreated
             }catch (e: HttpException){

@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import com.example.essstore.R
 import com.example.essstore.common.Common.DISPLAY_TIME_LONG
+import com.example.essstore.common.Common.nextScreenWithFinish
 import com.example.essstore.databinding.ActivityLoginBinding
 
 class Login : AppCompatActivity() {
@@ -15,13 +16,12 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        nextScreen()
-    }
-    private fun nextScreen() {
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, Signup::class.java)
-            startActivity(intent)
+        binding.btnLoginScreenLogin.setOnClickListener{
+            nextScreenWithFinish(this, HomeScreen::class.java)
+        }
+
+        binding.btnLoginScreenBack.setOnClickListener{
             finish()
-        },DISPLAY_TIME_LONG)
+        }
     }
 }

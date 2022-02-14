@@ -11,6 +11,7 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.essstore.common.Common
+import com.example.essstore.common.Common.API_KEY
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.SimpleProductsAdapter
 import com.example.essstore.databinding.ActivityHotProductsBinding
@@ -33,12 +34,12 @@ class HotProducts : AppCompatActivity() {
         }
 
     }
-
+//"57b501f0"
     private fun fetchData() {
         lifecycleScope.launchWhenCreated {
             binding.hotProductsScreenProgressBar.isVisible = true
             val response= try {
-                RetrofitInstance.api.getTodos("57b501f0")
+                RetrofitInstance.api.getTodos()
             } catch (e: IOException){
                 Log.e(ContentValues.TAG, "IOException: You might not have internet connection!")
                 binding.hotProductsScreenProgressBar.isVisible = false

@@ -9,6 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.essstore.common.Common
+import com.example.essstore.common.Common.nextScreenWithoutFinish
 import com.example.essstore.data.BoxProductsAdapter
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.SimpleProductsAdapter
@@ -30,6 +31,23 @@ class HomeScreen : AppCompatActivity() {
         setUpRecyclerViewHot()
         setUpRecyclerViewPromotions()
         Log.d(TAG, "Running Fine")
+        fetchData()
+
+        //Listeners
+        binding.homeScreenLatestProductsViewAll.setOnClickListener{
+            nextScreenWithoutFinish(this, LatestProducts::class.java)
+        }
+
+        binding.homeScreenHotProductsViewAll.setOnClickListener{
+            nextScreenWithoutFinish(this, HotProducts::class.java)
+        }
+
+        binding.homeScreenPromotionsViewAll.setOnClickListener{
+            nextScreenWithoutFinish(this, Promotions::class.java)
+        }
+    }
+
+    private fun fetchData(){
         lifecycleScope.launchWhenCreated {
             binding.homeScreenProgressBar.isVisible = true
             val response= try {
@@ -44,10 +62,13 @@ class HomeScreen : AppCompatActivity() {
                 return@launchWhenCreated
             }
             if(response.isSuccessful && response.body()!=null){
+                binding.homeScreenProgressBar.isVisible = false
+                binding.homeScreenLatestProductsLinearLayout.isVisible = true
+                binding.homeScreenHotProductsLinearLayout.isVisible = true
+                binding.homeScreenPromotionsLinearLayout.isVisible = true
                 productAdapterPromotions.products = response.body()!!
                 productAdapterLatest.products = response.body()!!
                 productAdapterHot.products = response.body()!!
-                binding.homeScreenProgressBar.isVisible = false
                 Log.d(ContentValues.TAG, "${response.raw().request.url}")
             }
             else{

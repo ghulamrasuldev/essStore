@@ -27,6 +27,14 @@ class HotProducts : AppCompatActivity() {
         setContentView(binding.root)
         setUpRecyclerView()
         Log.d(TAG, "Running Fine")
+        fetchData()
+        binding.btnHotProductsScreenBack.setOnClickListener{
+            finish()
+        }
+
+    }
+
+    private fun fetchData() {
         lifecycleScope.launchWhenCreated {
             binding.hotProductsScreenProgressBar.isVisible = true
             val response= try {
@@ -57,13 +65,5 @@ class HotProducts : AppCompatActivity() {
         productAdapter = SimpleProductsAdapter()
         adapter = productAdapter
         layoutManager = LinearLayoutManager(this@HotProducts)
-    }
-
-    private fun nextScreen() {
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, LatestProducts::class.java)
-            startActivity(intent)
-            finish()
-        }, Common.DISPLAY_TIME_TOO_LONG)
     }
 }

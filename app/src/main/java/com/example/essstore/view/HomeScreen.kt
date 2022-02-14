@@ -48,8 +48,6 @@ class HomeScreen : AppCompatActivity() {
                 productAdapterLatest.products = response.body()!!
                 productAdapterHot.products = response.body()!!
                 binding.homeScreenProgressBar.isVisible = false
-
-                Log.d(ContentValues.TAG, "${Common.list}")
                 Log.d(ContentValues.TAG, "${response.raw().request.url}")
             }
             else{

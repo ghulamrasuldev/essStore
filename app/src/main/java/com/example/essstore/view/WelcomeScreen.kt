@@ -1,11 +1,10 @@
 package com.example.essstore.view
 
-import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import com.example.essstore.common.Common.DISPLAY_TIME_LONG
+import com.example.essstore.common.Common.nextScreenWithFinish
+import com.example.essstore.common.Common.nextScreenWithoutFinish
 import com.example.essstore.databinding.ActivityWelcomeScreenBinding
 
 class WelcomeScreen : AppCompatActivity() {
@@ -17,17 +16,20 @@ class WelcomeScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityWelcomeScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        nextScreen()
+
+        binding.btnWelcomeScreenLogin.setOnClickListener{
+            nextScreenWithoutFinish(this , Login::class.java)
+        }
+
+        binding.btnWelcomeScreenSignup.setOnClickListener{
+            nextScreenWithoutFinish(this, Signup::class.java)
+        }
+
+        binding.btnWelcomeScreenExplore.setOnClickListener{
+            nextScreenWithFinish(this, HomeScreen::class.java)
+        }
 
     }
 
-    private fun nextScreen() {
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, Profile::class.java)
-            startActivity(intent)
-            finish()
-        }, DISPLAY_TIME_LONG)
-
-    }
 }

@@ -44,10 +44,6 @@ class LatestProducts : AppCompatActivity() {
             if(response.isSuccessful && response.body()!=null){
                 productAdapter.products = response.body()!!
                 binding.latestProductsScreenProgressBar.isVisible = false
-
-                nextScreen()
-
-                Log.d(ContentValues.TAG, "${Common.list}")
                 Log.d(ContentValues.TAG, "${response.raw().request.url}")
             }
             else{

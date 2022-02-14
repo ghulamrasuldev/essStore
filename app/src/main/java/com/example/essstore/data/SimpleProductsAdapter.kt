@@ -1,15 +1,10 @@
 package com.example.essstore.data
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.essstore.R
-import com.example.essstore.common.Common.list
 import com.example.essstore.databinding.GeneralProductCardBinding
 
 class SimpleProductsAdapter : RecyclerView.Adapter<SimpleProductsAdapter.ProductViewHolder>() {

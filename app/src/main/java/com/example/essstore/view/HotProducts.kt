@@ -7,15 +7,10 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.Log
-import android.widget.ProgressBar
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.essstore.R
 import com.example.essstore.common.Common
-import com.example.essstore.common.Common.addData
-import com.example.essstore.common.Common.list
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.SimpleProductsAdapter
 import com.example.essstore.databinding.ActivityHotProductsBinding
@@ -48,10 +43,6 @@ class HotProducts : AppCompatActivity() {
             if(response.isSuccessful && response.body()!=null){
                 productAdapter.products = response.body()!!
                 binding.hotProductsScreenProgressBar.isVisible = false
-
-                nextScreen()
-
-                Log.d(ContentValues.TAG, "$list")
                 Log.d(ContentValues.TAG, "${response.raw().request.url}")
             }
             else{

@@ -43,7 +43,6 @@ class BoxProductsAdapter : RecyclerView.Adapter<BoxProductsAdapter.ProductViewHo
 
         holder.binding.apply {
             val product = products[position]
-
             boxProductCardTitle.text = product.productName
             boxProductCardDescription.text = product.productDescription
             boxProductCardPrice.text = "$ ${product.productPrice}"

@@ -1,15 +1,20 @@
 package com.example.essstore.data
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.essstore.R
+import com.example.essstore.common.Common.list
 import com.example.essstore.databinding.GeneralProductCardBinding
 
 class SimpleProductsAdapter : RecyclerView.Adapter<SimpleProductsAdapter.ProductViewHolder>() {
 
-    class ProductViewHolder (val binding: GeneralProductCardBinding): RecyclerView.ViewHolder(binding.root)
+    inner class ProductViewHolder (val binding: GeneralProductCardBinding): RecyclerView.ViewHolder(binding.root)
 
     private val difCallBack= object : DiffUtil.ItemCallback<product>(){
         override fun areItemsTheSame(oldItem: product, newItem: product): Boolean {
@@ -40,6 +45,7 @@ class SimpleProductsAdapter : RecyclerView.Adapter<SimpleProductsAdapter.Product
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
+
         holder.binding.apply {
             val product = products[position]
             generalProductCardTitle.text = product.productName

@@ -10,7 +10,7 @@
     tools:context=".view.HotProducts">
 
     <ImageView
-        android:id="@+id/_btn_profile_screen_back"
+        android:id="@+id/btn_profile_screen_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_back"
@@ -28,7 +28,7 @@
         android:textColor="@color/white"/>
 
     <ProgressBar
-        android:id="@+id/_hot_products_screen_progress_bar"
+        android:id="@+id/hot_products_screen_progress_bar"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:visibility="gone"/>
@@ -45,7 +45,7 @@
             android:scrollbars="none">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/_hot_products_screen_recycler_view"
+                android:id="@+id/hot_products_screen_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/general_product_card"/>

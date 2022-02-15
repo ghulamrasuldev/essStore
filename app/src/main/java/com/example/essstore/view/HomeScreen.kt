@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.essstore.R
 import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common.API_KEY
 import com.example.essstore.common.Common.nextScreenWithoutFinish
@@ -50,6 +51,11 @@ class HomeScreen : AppCompatActivity() {
 
         binding.btnHomeScreenCart.setOnClickListener{
             nextScreenWithoutFinish(this, CartScreen::class.java)
+        }
+
+        binding.btnHomeScreenMenu.setOnClickListener{
+            nextScreenWithoutFinish(this, MainMenu::class.java)
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
     }
 //"57b501f0"

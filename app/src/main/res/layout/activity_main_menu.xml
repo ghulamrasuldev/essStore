@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".view.HotProducts">
+
+    <ImageView
+        android:id="@+id/btn_hot_products_screen_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_back"
+        android:clickable="true"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="9"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="24sp"
+            android:text="Quick Menu"
+            android:textColor="@color/white"/>
+
+        <ImageButton
+            android:id="@+id/btn_menu_cart"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_cart"
+            android:background="@color/primary_color"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_menu_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_text_view">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="32dp"
+            android:text="Profile"
+            android:clickable="true"
+            android:padding="16dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layoutDirection="rtl"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"
+            android:clickable="true"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/btn_menu_latest_products"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_text_view">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="32dp"
+            android:text="Latest Products"
+            android:clickable="true"
+            android:padding="16dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layoutDirection="rtl"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"
+            android:clickable="true"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/btn_menu_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_text_view"
+        android:clickable="true">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="32dp"
+            android:text="Home"
+            android:padding="16dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layoutDirection="rtl"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_menu_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_text_view">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="32dp"
+            android:text="Settings"
+            android:padding="16dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layoutDirection="rtl"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_menu_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_text_view">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="32dp"
+            android:text="Logout"
+            android:padding="16dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layoutDirection="rtl"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"/>
+
+    </LinearLayout>
+
+</LinearLayout>

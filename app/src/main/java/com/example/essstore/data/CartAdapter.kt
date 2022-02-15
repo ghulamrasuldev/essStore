@@ -1,10 +1,8 @@
 package com.example.essstore.data
 
-import android.text.Editable
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.AsyncListDiffer
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.essstore.cart.cartProduct
 import com.example.essstore.databinding.CartProductCardBinding

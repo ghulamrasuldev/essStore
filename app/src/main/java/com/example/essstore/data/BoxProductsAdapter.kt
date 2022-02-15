@@ -5,9 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.essstore.cart.cartProduct
+import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.databinding.BoxProductCardBinding
 
-class BoxProductsAdapter : RecyclerView.Adapter<BoxProductsAdapter.ProductViewHolder>() {
+class BoxProductsAdapter (mCartViewModel: cartProductViewModel) : RecyclerView.Adapter<BoxProductsAdapter.ProductViewHolder>() {
+
+    private var mCartViewModel: cartProductViewModel = mCartViewModel
 
     inner class ProductViewHolder (val binding: BoxProductCardBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -40,12 +44,28 @@ class BoxProductsAdapter : RecyclerView.Adapter<BoxProductsAdapter.ProductViewHo
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-
+        val product = products[position]
         holder.binding.apply {
-            val product = products[position]
             boxProductCardTitle.text = product.productName
             boxProductCardDescription.text = product.productDescription
             boxProductCardPrice.text = "$ ${product.productPrice}"
+        }
+
+        holder.binding.boxProductCardAddToCart.setOnClickListener{
+            mCartViewModel.addProductToCart(
+                cartProduct(
+                    product.id,
+                    product.availableQuantity,
+                    product.category,
+                    product.dateCreated,
+                    product.discount,
+                    product.productDescription,
+                    product.productImage,
+                    product.productName,
+                    product.productPrice,
+                    product.soldQuantity,
+                )
+            )
         }
     }
 

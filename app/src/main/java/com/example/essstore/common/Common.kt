@@ -13,8 +13,8 @@ object Common {
     val DISPLAY_TIME_LONG: Long= 100
     val DISPLAY_TIME_SHORT: Long = 1000
     val DISPLAY_TIME_TOO_LONG: Long = 3000
-    val BASE_URL: String = "http://192.168.18.59:8000/"
-    const val GET_PRODUCTS : String = "hot-products/"
+    val BASE_URL: String = "https://my.api.mockaroo.com/"
+    const val GET_PRODUCTS : String = "products"
     val API_KEY: String = "57b501f0"
 
     fun Context.nextScreenWithFinish(activity: Activity, classs : Class<*>) {

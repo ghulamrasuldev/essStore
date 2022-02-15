@@ -33,7 +33,7 @@ class Promotions : AppCompatActivity() {
         lifecycleScope.launchWhenCreated {
             binding.promotionsScreenProgressBar.isVisible = true
             val response= try {
-                RetrofitInstance.api.getTodos()
+                RetrofitInstance.api.getTodos(API_KEY)
             } catch (e: IOException){
                 Log.e(ContentValues.TAG, "$e")
                 binding.promotionsScreenProgressBar.isVisible = false

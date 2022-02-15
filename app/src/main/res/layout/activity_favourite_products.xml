@@ -16,16 +16,32 @@
         android:src="@drawable/icon_back"
         android:clickable="true"/>
 
-    <TextView
-        android:layout_marginTop="32dp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:fontFamily="@font/montserrat_bold"
-        android:textSize="24sp"
-        android:text="Favourites"
-        android:textColor="@color/white"/>
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="9"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="24sp"
+            android:text="Favourite Products"
+            android:textColor="@color/white"/>
+
+        <ImageButton
+            android:id="@+id/btn_latest_products_cart"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_cart"
+            android:background="@color/primary_color"/>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

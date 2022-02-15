@@ -6,7 +6,7 @@ import retrofit2.http.*
 
 interface ProductInterface {
     @GET(GET_PRODUCTS)
-    suspend fun getTodos(): Response<List<product>>
+    suspend fun getTodos(@Query("key") key: String): Response<List<product>>
 }
 
 //@Query("key") key: String

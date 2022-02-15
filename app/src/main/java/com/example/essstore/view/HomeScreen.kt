@@ -55,7 +55,7 @@ class HomeScreen : AppCompatActivity() {
 
         binding.btnHomeScreenMenu.setOnClickListener{
             nextScreenWithoutFinish(this, MainMenu::class.java)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         }
     }
 //"57b501f0"

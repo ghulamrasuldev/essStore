@@ -20,6 +20,7 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:src="@drawable/icon_menu"
+            android:background="@drawable/bg_button_ripple_effect"
             android:clickable="true"/>
 
         <TextView

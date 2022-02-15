@@ -18,18 +18,5 @@ class Profile : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        nextScreen()
-
     }
-
-    private fun nextScreen() {
-
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, Login::class.java)
-            startActivity(intent)
-            finish()
-        }, DISPLAY_TIME_LONG)
-
-    }
-
 }

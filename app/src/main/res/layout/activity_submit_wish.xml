@@ -96,7 +96,7 @@
             android:background="@drawable/bg_edit_text"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/_btn_login_screen_login"
+            android:id="@+id/request_product_submit"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:layout_width="match_parent"

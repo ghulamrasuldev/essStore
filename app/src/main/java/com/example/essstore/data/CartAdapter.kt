@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.essstore.cart.cartProduct
+import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.databinding.CartProductCardBinding
 
-class CartAdapter: RecyclerView.Adapter<CartAdapter.cartViewHolder>(){
+class CartAdapter(mCartViewModel: cartProductViewModel): RecyclerView.Adapter<CartAdapter.cartViewHolder>(){
     private var productList = emptyList<cartProduct>()
+    val mCartViewmodel = mCartViewModel
     class cartViewHolder (val binding: CartProductCardBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CartAdapter.cartViewHolder {
@@ -22,14 +24,33 @@ class CartAdapter: RecyclerView.Adapter<CartAdapter.cartViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: CartAdapter.cartViewHolder, position: Int) {
-
+        val product = productList[position]
         holder.binding.apply {
-            val product = productList[position]
             cartProductTitle.text = product.productName
             cartProductPrice.text = "$ ${product.productPrice}"
             cartProductDescription.text = product.productDescription
-            cartProductSelectedQuantity.text = product.availableQuantity.toString()
+            cartProductSelectedQuantity.text = product.selectedQuantity.toString()
 
+        }
+
+        holder.binding.cartProductDeleteItem.setOnClickListener{
+            mCartViewmodel.deleteProduct(
+                product.id
+            )
+        }
+
+        holder.binding.cartProductIncrement.setOnClickListener{
+            mCartViewmodel.updateProduct(
+                product.id,
+                product.selectedQuantity+1
+            )
+        }
+
+        holder.binding.cartProductDecrement.setOnClickListener{
+            mCartViewmodel.updateProduct(
+                product.id,
+                product.selectedQuantity-1
+            )
         }
     }
 

@@ -10,4 +10,12 @@ class cartProductRepository (private val cartProductDAO: cartProductDAO){
         cartProductDAO.addProductToCart(product)
     }
 
+    suspend fun updateProduct(id: Int, selectedQuanitity: Int){
+        cartProductDAO.UpdateProduct(id, selectedQuanitity)
+    }
+
+    suspend fun deleteProduct(id: Int){
+        cartProductDAO.deleteProduct(id)
+    }
+
 }

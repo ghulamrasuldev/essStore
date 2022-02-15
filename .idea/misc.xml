@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/bg_button_ripple_effect.xml" value="0.21944444444444444" />
         <entry key="app/src/main/res/drawable/bg_buttton_ripple_effect_small.xml" value="0.3194444444444444" />
         <entry key="app/src/main/res/drawable/bg_edit_text.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/bg_ripple_effect_warn.xml" value="0.16296296296296298" />
         <entry key="app/src/main/res/drawable/bg_rounded_outline.xml" value="0.321025641025641" />
         <entry key="app/src/main/res/drawable/bg_text_view.xml" value="0.321025641025641" />
         <entry key="app/src/main/res/drawable/bg_text_view_warn.xml" value="0.321025641025641" />

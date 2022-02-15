@@ -10,7 +10,7 @@
     tools:context=".view.HotProducts">
 
     <ImageView
-        android:id="@+id/_btn_profile_screen_back"
+        android:id="@+id/btn_wish_list_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_back"
@@ -27,6 +27,12 @@
         android:text="Wish List"
         android:textColor="@color/white"/>
 
+    <ProgressBar
+        android:id="@+id/wish_list_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="gone"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -40,6 +46,7 @@
             android:scrollbars="none">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/wish_list_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/wish_list_card"/>

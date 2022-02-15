@@ -10,7 +10,7 @@
     tools:context=".view.HotProducts">
 
     <ImageView
-        android:id="@+id/_btn_profile_screen_back"
+        android:id="@+id/cart_screen_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_back"

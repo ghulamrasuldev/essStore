@@ -14,4 +14,10 @@ interface cartProductDAO {
 
     @Query("SELECT * FROM productsInCart ORDER BY productPrice ASC")
     fun readAllData () : LiveData<List<cartProduct>>
+
+    @Query("DELETE FROM productsInCart WHERE id = :id")
+    fun deleteProduct(id: Int)
+
+    @Query("UPDATE productsInCart SET selectedQuantity =:selectedQuantity WHERE id=:id")
+    fun UpdateProduct(id: Int, selectedQuantity: Int)
 }

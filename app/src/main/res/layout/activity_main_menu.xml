@@ -96,7 +96,7 @@
             android:textColor="@color/black"
             android:textSize="16sp"
             android:layout_marginStart="32dp"
-            android:text="Latest Products"
+            android:text="Favourite Products"
             android:padding="16dp"/>
 
         <ImageView
@@ -130,6 +130,70 @@
             android:textSize="16sp"
             android:layout_marginStart="32dp"
             android:text="Home"
+            android:padding="16dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layoutDirection="rtl"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_menu_make_request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:background="@drawable/bg_button_ripple_effect">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="32dp"
+            android:text="Make Request"
+            android:padding="16dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layoutDirection="rtl"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_menu_requests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:background="@drawable/bg_button_ripple_effect">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="32dp"
+            android:text="Your Requests"
             android:padding="16dp"/>
 
         <ImageView

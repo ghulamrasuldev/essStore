@@ -11,20 +11,25 @@ import com.example.essstore.databinding.ActivityCartScreenBinding
 class CartScreen : AppCompatActivity() {
     private lateinit var cartAdapter: CartAdapter
     private lateinit var binding: ActivityCartScreenBinding
+    lateinit var mCartViewModel: cartProductViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCartScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
+        mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
         setUpRecyclerView()
         mCartViewModel.readAllData.observe(this, androidx.lifecycle.Observer { product ->
             cartAdapter.setData(product)
         })
+
+        binding.cartScreenBack.setOnClickListener{
+            finish()
+        }
     }
 
     private fun setUpRecyclerView() = binding.cartScreenRecyclerView.apply{
-        cartAdapter = CartAdapter()
+        cartAdapter = CartAdapter(mCartViewModel)
         adapter = cartAdapter
         layoutManager = LinearLayoutManager(this@CartScreen)
     }

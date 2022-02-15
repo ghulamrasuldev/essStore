@@ -16,5 +16,6 @@ data class cartProduct (
     val productImage: String,
     val productName: String,
     val productPrice: Int,
-    val soldQuantity: Int
+    val soldQuantity: Int,
+    val selectedQuantity: Int
 )

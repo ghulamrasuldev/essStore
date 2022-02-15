@@ -22,4 +22,16 @@ class cartProductViewModel(application: Application): AndroidViewModel(applicati
             repository.addProduct(product)
         }
     }
+
+    fun deleteProduct(id: Int){
+        viewModelScope.launch ( Dispatchers.IO ){
+            repository.deleteProduct(id)
+        }
+    }
+
+    fun updateProduct(id: Int, selectedQuanitity: Int){
+        viewModelScope.launch ( Dispatchers.IO ){
+            repository.updateProduct(id, selectedQuanitity)
+        }
+    }
 }

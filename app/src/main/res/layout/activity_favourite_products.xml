@@ -10,7 +10,7 @@
     tools:context=".view.FavouriteProducts">
 
     <ImageView
-        android:id="@+id/_btn_profile_screen_back"
+        android:id="@+id/favourite_screen_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_back"
@@ -34,7 +34,7 @@
             android:textColor="@color/white"/>
 
         <ImageButton
-            android:id="@+id/btn_latest_products_cart"
+            android:id="@+id/btn_favourite_products_cart"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -42,6 +42,12 @@
             android:background="@color/primary_color"/>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/favourite_products_screen_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="gone"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,6 +61,7 @@
             android:scrollbars="none">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/favourite_products_screen_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/general_product_card"/>

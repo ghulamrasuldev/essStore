@@ -64,6 +64,7 @@ class BoxProductsAdapter (mCartViewModel: cartProductViewModel) : RecyclerView.A
                     product.productName,
                     product.productPrice,
                     product.soldQuantity,
+                    selectedQuantity = 1
                 )
             )
         }

@@ -14,14 +14,6 @@ class Setting : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        nextScreen()
-    }
 
-    private fun nextScreen() {
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, SubmitWish::class.java)
-            startActivity(intent)
-            finish()
-        }, Common.DISPLAY_TIME_LONG)
     }
 }

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.essstore.common.Common
+import com.example.essstore.common.Common.nextScreenWithFinish
 import com.example.essstore.databinding.ActivityProductSubmittedThankYouBinding
 
 class ProductSubmittedThankYou : AppCompatActivity() {
@@ -14,14 +15,12 @@ class ProductSubmittedThankYou : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityProductSubmittedThankYouBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        nextScreen()
-    }
-
-    private fun nextScreen() {
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, OrderCreatedThankYou::class.java)
-            startActivity(intent)
-            finish()
+            nextScreenWithFinish(
+                this,
+                WishList::class.java
+            )
         }, Common.DISPLAY_TIME_LONG)
+
     }
 }

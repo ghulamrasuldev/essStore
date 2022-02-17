@@ -28,6 +28,7 @@ class WishList : AppCompatActivity() {
         Log.d(TAG, "Running Fine")
         fetchData()
 
+        //Listeners
         binding.btnWishListBack.setOnClickListener{
             finish()
         }

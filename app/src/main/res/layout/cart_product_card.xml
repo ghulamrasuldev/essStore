@@ -55,9 +55,9 @@
                     android:id="@+id/cart_product_delete_item"
                     android:layout_width="0dp"
                     android:layout_weight="1"
-                    android:layout_height="match_parent"
+                    android:layout_height="30dp"
                     android:src="@drawable/icon_delete"
-                    android:background="@color/primary_color_accent"
+                    android:background="@drawable/bg_buttton_ripple_effect_small"
                     android:padding="2dp"/>
 
             </LinearLayout>
@@ -81,14 +81,16 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:layout_weight="2">
+                    android:layout_gravity="center"
+                    android:layout_weight="3">
 
                     <ImageView
                         android:id="@+id/cart_product_decrement"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:gravity="center"
                         android:layoutDirection="ltr"
-                        android:src="@drawable/icon_increase_decrease"
+                        android:src="@drawable/icon_decrement"
                         android:clickable="true"/>
 
                     <TextView
@@ -96,15 +98,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12"
+                        android:gravity="center"
                         android:padding="8dp"
                         android:textSize="15sp"
                         android:background="@drawable/bg_edit_text"/>
 
                     <ImageView
                         android:id="@+id/cart_product_increment"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/icon_increase_decrease"/>
+                        android:layout_width="36dp"
+                        android:gravity="center"
+                        android:layout_height="36dp"
+                        android:src="@drawable/icon_increment"/>
 
                 </LinearLayout>
 

@@ -14,7 +14,7 @@ class OrderCreatedThankYou : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityOrderCreatedThankYouBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        nextScreen()
+
     }
 
     private fun nextScreen() {

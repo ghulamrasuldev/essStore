@@ -15,5 +15,10 @@ class Setting : AppCompatActivity() {
         binding = ActivitySettingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        //Listeners
+        binding.btnSettingScreenBack.setOnClickListener{
+            finish()
+        }
     }
 }

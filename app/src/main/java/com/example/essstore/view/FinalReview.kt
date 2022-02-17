@@ -23,7 +23,7 @@ class FinalReview : AppCompatActivity() {
         binding = ActivityFinalReviewBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        nextScreen()
+
     }
 
     private fun nextScreen() {

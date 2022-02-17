@@ -17,7 +17,7 @@ class SubmitWish : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.requestProductSubmit.setOnClickListener{
-            nextScreenWithFinish(this, WishList::class.java)
+            nextScreenWithFinish(this, ProductSubmittedThankYou::class.java)
         }
     }
 }

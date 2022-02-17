@@ -8,10 +8,13 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import androidx.core.view.isVisible
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common
 import com.example.essstore.common.Common.API_KEY
+import com.example.essstore.common.Common.nextScreenWithoutFinish
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.SimpleProductsAdapter
 import com.example.essstore.databinding.ActivityLatestProductsBinding
@@ -20,19 +23,30 @@ import java.io.IOException
 
 class LatestProducts : AppCompatActivity() {
     val TAG = "Latest Prodcts"
+    lateinit var mCartViewModel: cartProductViewModel
     private lateinit var binding: ActivityLatestProductsBinding
     private  lateinit var productAdapter: SimpleProductsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityLatestProductsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
+
 
         setUpRecyclerView()
         Log.d(TAG, "Running Fine")
         fetchData()
 
+        //Listeners
         binding.latestProductsScreenBack.setOnClickListener{
             finish()
+        }
+
+        binding.btnLatestProductsCart.setOnClickListener{
+            nextScreenWithoutFinish(
+                this,
+                CartScreen::class.java
+            )
         }
 
     }
@@ -65,7 +79,7 @@ class LatestProducts : AppCompatActivity() {
     }
 
     private fun setUpRecyclerView() = binding.latestProductsScreenRecyclerView.apply{
-        productAdapter = SimpleProductsAdapter()
+        productAdapter = SimpleProductsAdapter(mCartViewModel)
         adapter = productAdapter
         layoutManager = LinearLayoutManager(this@LatestProducts)
     }

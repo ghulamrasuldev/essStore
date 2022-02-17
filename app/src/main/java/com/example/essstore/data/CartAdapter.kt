@@ -52,6 +52,7 @@ class CartAdapter(mCartViewModel: cartProductViewModel): RecyclerView.Adapter<Ca
                 product.selectedQuantity-1
             )
         }
+
     }
 
     fun setData(cartProducts: List<cartProduct>){

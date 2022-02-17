@@ -16,6 +16,8 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        //Listeners
         binding.btnLoginScreenLogin.setOnClickListener{
             nextScreenWithFinish(this, HomeScreen::class.java)
         }

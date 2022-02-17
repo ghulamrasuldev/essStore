@@ -14,6 +14,9 @@
         android:theme="@style/Theme.EssStore"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".view.ChangePassword"
+            android:exported="true" />
+        <activity
             android:name=".view.CardPayment"
             android:exported="true" />
         <activity

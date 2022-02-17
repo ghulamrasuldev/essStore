@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.essstore.common.Common.DISPLAY_TIME_LONG
+import com.example.essstore.common.Common.makeToast
 import com.example.essstore.common.Common.nextScreenWithFinish
 import com.example.essstore.databinding.ActivitySignupBinding
 
@@ -17,6 +18,10 @@ class Signup : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnSignupScreenSignup.setOnClickListener{
+            makeToast(
+                this,
+                "Signed up successfully!"
+            )
             nextScreenWithFinish(this, HomeScreen::class.java)
         }
 

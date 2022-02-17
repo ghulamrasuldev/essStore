@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.essstore.cart.cartProduct
 import com.example.essstore.cart.cartProductViewModel
+import com.example.essstore.common.Common.makeToast
 import com.example.essstore.databinding.BoxProductCardBinding
 
 class BoxProductsAdapter (mCartViewModel: cartProductViewModel) : RecyclerView.Adapter<BoxProductsAdapter.ProductViewHolder>() {
@@ -54,6 +55,10 @@ class BoxProductsAdapter (mCartViewModel: cartProductViewModel) : RecyclerView.A
         }
 
         holder.binding.boxProductCardAddToCart.setOnClickListener{
+            makeToast(
+                holder.itemView.context,
+                "Product added to Cart!"
+            )
             mCartViewModel.addProductToCart(
                 cartProduct(
                     product.id,

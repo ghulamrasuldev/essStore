@@ -41,7 +41,7 @@
 
             <!--Profile Button-->
             <LinearLayout
-                android:id="@+id/_btn_setting_screen_profile"
+                android:id="@+id/btn_setting_screen_profile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -74,7 +74,7 @@
 
             <!--Change Password-->
             <LinearLayout
-                android:id="@+id/_btn_setting_screen_change_password"
+                android:id="@+id/btn_setting_screen_change_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -107,7 +107,7 @@
 
             <!--Logout-->
             <LinearLayout
-                android:id="@+id/_btn_setting_screen_logout"
+                android:id="@+id/btn_setting_screen_logout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -140,7 +140,7 @@
 
             <!--Delete Account-->
             <LinearLayout
-                android:id="@+id/_btn_setting_screen_delete_account"
+                android:id="@+id/btn_setting_screen_delete_account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -148,6 +148,7 @@
                 android:gravity="center"
                 android:layout_marginBottom="4dp"
                 android:layout_marginTop="4dp"
+                android:clickable="true"
                 android:background="@drawable/bg_text_view_warn">
 
                 <TextView

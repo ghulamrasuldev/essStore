@@ -11,6 +11,8 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.example.essstore.common.Common
 import com.example.essstore.common.Common.DISPLAY_TIME_LONG
+import com.example.essstore.common.Common.makeToast
+import com.example.essstore.common.Common.nextScreenWithFinish
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.user
 import com.example.essstore.databinding.ActivityProfileBinding
@@ -32,6 +34,14 @@ class Profile : AppCompatActivity() {
 
         //Listeners
         binding.btnProfileScreenBack.setOnClickListener{
+            finish()
+        }
+
+        binding.personalProfileUpdateInfo.setOnClickListener{
+            makeToast(
+                this,
+                "Profile Information Updated!"
+            )
             finish()
         }
 

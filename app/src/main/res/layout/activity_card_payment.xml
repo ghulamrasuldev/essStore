@@ -10,7 +10,7 @@
     tools:context=".view.Profile">
 
     <ImageView
-        android:id="@+id/_btn_profile_screen_back"
+        android:id="@+id/btn_card_info_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/icon_back"
@@ -24,7 +24,7 @@
         android:gravity="center"
         android:fontFamily="@font/montserrat_bold"
         android:textSize="24sp"
-        android:text="Select Payment Method"
+        android:text="Card Information"
         android:textColor="@color/white"/>
 
     <!--Name-->

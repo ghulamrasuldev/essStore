@@ -2,7 +2,12 @@ package com.example.essstore.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.essstore.common.Common.CARD_PAYMENT
+import com.example.essstore.common.Common.CASH_ON_DELIVERY
+import com.example.essstore.common.Common.PAYMENT_METHOD
 import com.example.essstore.common.Common.nextScreenWithFinish
+import com.example.essstore.common.Common.nextScreenWithoutFinish
+import com.example.essstore.common.Common.nextScreenWithoutFinishAndExtras
 import com.example.essstore.databinding.ActivitySelectPaymentMethodBinding
 
 class SelectPaymentMethod : AppCompatActivity() {
@@ -15,19 +20,24 @@ class SelectPaymentMethod : AppCompatActivity() {
 
 
         //Listeners
-
         binding.btnPaymentMethodCard.setOnClickListener{
-            nextScreenWithFinish(
+            nextScreenWithoutFinish(
                 this,
-                CardPayment::class.java
+                CardPayment::class.java,
             )
         }
 
         binding.btnPaymentMethodCashOnDelivery.setOnClickListener{
-            nextScreenWithFinish(
+            nextScreenWithoutFinishAndExtras(
                 this,
-                FinalReview::class.java
+                FinalReview::class.java,
+                PAYMENT_METHOD,
+                CASH_ON_DELIVERY
             )
+        }
+
+        binding.btnSelectPaymentBack.setOnClickListener{
+            finish()
         }
     }
 }

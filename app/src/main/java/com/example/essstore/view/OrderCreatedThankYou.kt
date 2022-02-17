@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.example.essstore.common.Common
+import com.example.essstore.common.Common.nextScreenWithFinish
 import com.example.essstore.databinding.ActivityOrderCreatedThankYouBinding
 
 class OrderCreatedThankYou : AppCompatActivity() {
@@ -15,13 +16,11 @@ class OrderCreatedThankYou : AppCompatActivity() {
         binding = ActivityOrderCreatedThankYouBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-    }
-
-    private fun nextScreen() {
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, FinalReview::class.java)
-            startActivity(intent)
-            finish()
+            nextScreenWithFinish(
+                this,
+                HomeScreen::class.java
+            )
         }, Common.DISPLAY_TIME_LONG)
     }
 }

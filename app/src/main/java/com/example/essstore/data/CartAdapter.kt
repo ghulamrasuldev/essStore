@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.essstore.cart.cartProduct
 import com.example.essstore.cart.cartProductViewModel
+import com.example.essstore.common.Common.makeToast
 import com.example.essstore.databinding.CartProductCardBinding
 
 class CartAdapter(mCartViewModel: cartProductViewModel): RecyclerView.Adapter<CartAdapter.cartViewHolder>(){
@@ -34,6 +35,10 @@ class CartAdapter(mCartViewModel: cartProductViewModel): RecyclerView.Adapter<Ca
         }
 
         holder.binding.cartProductDeleteItem.setOnClickListener{
+            makeToast(
+                holder.itemView.context,
+                "Product Removed!"
+            )
             mCartViewmodel.deleteProduct(
                 product.id
             )

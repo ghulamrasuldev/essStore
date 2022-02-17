@@ -3,6 +3,7 @@ package com.example.essstore.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.essstore.R
+import com.example.essstore.common.Common.nextScreenWithFinishAffinity
 import com.example.essstore.common.Common.nextScreenWithoutFinish
 import com.example.essstore.databinding.ActivityMainMenuBinding
 
@@ -48,7 +49,10 @@ class MainMenu : AppCompatActivity() {
         }
 
         binding.btnMenuLogout.setOnClickListener{
-
+            nextScreenWithFinishAffinity(
+                this,
+                Login::class.java
+            )
         }
 
     }

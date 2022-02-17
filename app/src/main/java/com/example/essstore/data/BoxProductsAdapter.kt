@@ -11,6 +11,8 @@ import com.example.essstore.databinding.BoxProductCardBinding
 
 class BoxProductsAdapter (mCartViewModel: cartProductViewModel) : RecyclerView.Adapter<BoxProductsAdapter.ProductViewHolder>() {
 
+
+    private var limit = 7
     private var mCartViewModel: cartProductViewModel = mCartViewModel
 
     inner class ProductViewHolder (val binding: BoxProductCardBinding): RecyclerView.ViewHolder(binding.root)
@@ -71,6 +73,9 @@ class BoxProductsAdapter (mCartViewModel: cartProductViewModel) : RecyclerView.A
     }
 
     override fun getItemCount(): Int {
+        if (products.size>7){
+            return limit
+        }
         return products.size
     }
 }

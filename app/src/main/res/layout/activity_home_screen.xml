@@ -102,6 +102,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        tools:itemCount="7"
                         tools:listitem="@layout/box_product_card"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
@@ -153,6 +154,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        tools:itemCount="7"
                         tools:listitem="@layout/box_product_card"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
@@ -204,6 +206,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
+                        tools:itemCount="7"
                         tools:listitem="@layout/box_product_card"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 

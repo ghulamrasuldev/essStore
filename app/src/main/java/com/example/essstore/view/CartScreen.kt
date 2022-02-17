@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.essstore.cart.cartProductViewModel
+import com.example.essstore.common.Common.nextScreenWithoutFinish
 import com.example.essstore.data.CartAdapter
 import com.example.essstore.databinding.ActivityCartScreenBinding
 
@@ -25,6 +26,13 @@ class CartScreen : AppCompatActivity() {
 
         binding.cartScreenBack.setOnClickListener{
             finish()
+        }
+
+        binding.cartScreenProceed.setOnClickListener{
+            nextScreenWithoutFinish(
+                this,
+                SelectPaymentMethod::class.java
+            )
         }
     }
 

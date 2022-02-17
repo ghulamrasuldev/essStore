@@ -49,7 +49,7 @@ class FavouriteProducts : AppCompatActivity() {
         lifecycleScope.launchWhenCreated {
             binding.favouriteProductsScreenProgressBar.isVisible = true
             val response= try {
-                RetrofitInstance.api.getTodos(Common.API_KEY)
+                RetrofitInstance.api.getProducts(Common.API_KEY)
             } catch (e: IOException){
                 Log.e(ContentValues.TAG, "IOException: You might not have internet connection!")
                 binding.favouriteProductsScreenProgressBar.isVisible = false

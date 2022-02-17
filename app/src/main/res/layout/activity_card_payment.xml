@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".view.Profile">
+
+    <ImageView
+        android:id="@+id/_btn_profile_screen_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_back"
+        android:clickable="true"/>
+
+    <TextView
+        android:layout_marginTop="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="24sp"
+        android:text="Select Payment Method"
+        android:textColor="@color/white"/>
+
+    <!--Name-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="16sp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/card_payment_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name On Your Card"
+        android:gravity="center"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginBottom="4dp"
+        android:padding="16dp"
+        android:background="@drawable/bg_edit_text"/>
+
+    <!--Card Number-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Card Number"
+        android:textSize="16sp"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/et_profile_screen_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Card Number"
+        android:gravity="center"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/montserrat"
+        android:layout_marginBottom="4dp"
+        android:padding="16dp"
+        android:background="@drawable/bg_edit_text"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:paddingRight="4dp"
+            android:orientation="vertical">
+            <!--Expiry-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Expiry"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/white"/>
+
+            <EditText
+                android:id="@+id/et_card_payment_expiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Card Expiry"
+                android:inputType="date"
+                android:maxLength="5"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginBottom="4dp"
+                android:padding="16dp"
+                android:background="@drawable/bg_edit_text"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:paddingLeft="4dp"
+            android:orientation="vertical">
+            <!--CVV-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CVV"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/white"/>
+
+            <EditText
+                android:id="@+id/et_card_payment_cvv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="CVV"
+                android:maxLength="3"
+                android:inputType="numberPassword"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/montserrat"
+                android:layout_marginBottom="4dp"
+                android:padding="16dp"
+                android:background="@drawable/bg_edit_text"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/card_payment_proceed"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Proceed"
+        android:background="@drawable/bg_button_ripple_effect"/>
+
+
+</LinearLayout>

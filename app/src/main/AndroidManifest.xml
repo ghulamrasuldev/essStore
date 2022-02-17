@@ -14,6 +14,12 @@
         android:theme="@style/Theme.EssStore"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".view.CardPayment"
+            android:exported="true" />
+        <activity
+            android:name=".view.SelectPaymentMethod"
+            android:exported="true" />
+        <activity
             android:name=".view.MainMenu"
             android:exported="true" />
         <activity

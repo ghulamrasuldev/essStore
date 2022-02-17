@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".view.Profile">
+
+    <ImageView
+        android:id="@+id/_btn_profile_screen_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_back"
+        android:clickable="true"/>
+
+    <TextView
+        android:layout_marginTop="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat_bold"
+        android:textSize="24sp"
+        android:text="Select Payment Method"
+        android:textColor="@color/white"/>
+
+    <!--Card Payment-->
+    <LinearLayout
+        android:id="@+id/btn_payment_method_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:background="@drawable/bg_button_ripple_effect">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="32dp"
+            android:text="Card Payment"
+            android:padding="16dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layoutDirection="rtl"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"/>
+
+    </LinearLayout>
+
+    <!--Cash on Delivery-->
+    <LinearLayout
+        android:id="@+id/btn_payment_method_cash_on_delivery"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:background="@drawable/bg_button_ripple_effect">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="32dp"
+            android:text="Cash on Delivery"
+            android:padding="16dp"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layoutDirection="rtl"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_back"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

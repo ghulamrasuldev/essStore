@@ -16,10 +16,15 @@ object Common {
 
     //http://192.168.18.59:3000/
     //https://my.api.mockaroo.com/
-    val BASE_URL: String = "https://my.api.mockaroo.com"
+    val BASE_URL: String = "http://192.168.18.59:3000/"
     const val GET_PRODUCTS : String = "products"
     const val HOT_PRODUCTS: String = "hot-products/"
+    const val GET_PROMOTIONS: String = "promotions/"
+    const val NEW_ARRIVALS: String ="new-arrivals/"
+    const val ALL_PRODUCTS: String = "all-products/"
+    const val GET_WISH_LIST: String = "wish-list/"
     const val GET_USER: String = "user"
+    const val REGISTER_USER: String = "register/"
     //57b501f0
     const val API_KEY: String = "57b501f0"
     const val PAYMENT_METHOD: String = "Payment Method"

@@ -21,6 +21,7 @@ import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.essstore.cart.cartProduct
+import com.example.essstore.cart.cartProductDAO
 import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common
 import com.example.essstore.common.Common.PAYMENT_METHOD
@@ -68,6 +69,8 @@ class FinalReview : AppCompatActivity() {
         binding.finalReviewCreateOrder.setOnClickListener{
 
             createNotification()
+
+            val cartProductDAO: cartProductDAO
 
             nextScreenWithFinish(
                 this,

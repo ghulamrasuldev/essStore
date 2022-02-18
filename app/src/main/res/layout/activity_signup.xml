@@ -38,26 +38,26 @@
             android:layout_marginTop="16dp"
             android:orientation="vertical">
 
-            <!--Name-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Name"
-                android:textSize="16sp"
-                android:fontFamily="@font/montserrat_bold"
-                android:textColor="@color/white"/>
+<!--            &lt;!&ndash;Name&ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Name"-->
+<!--                android:textSize="16sp"-->
+<!--                android:fontFamily="@font/montserrat_bold"-->
+<!--                android:textColor="@color/white"/>-->
 
-            <EditText
-                android:id="@+id/et_profile_screen_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Your Name Here"
-                android:gravity="center"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/montserrat"
-                android:layout_marginBottom="4dp"
-                android:padding="16dp"
-                android:background="@drawable/bg_edit_text"/>
+<!--            <EditText-->
+<!--                android:id="@+id/et_profile_screen_name"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Your Name Here"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:layout_marginBottom="4dp"-->
+<!--                android:padding="16dp"-->
+<!--                android:background="@drawable/bg_edit_text"/>-->
 
             <!--User Name-->
             <TextView
@@ -101,47 +101,47 @@
                 android:padding="16dp"
                 android:background="@drawable/bg_edit_text"/>
 
-            <!--Phone-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Phone"
-                android:textSize="16sp"
-                android:fontFamily="@font/montserrat_bold"
-                android:textColor="@color/white"/>
+<!--            &lt;!&ndash;Phone&ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Phone"-->
+<!--                android:textSize="16sp"-->
+<!--                android:fontFamily="@font/montserrat_bold"-->
+<!--                android:textColor="@color/white"/>-->
 
-            <EditText
-                android:id="@+id/et_profile_screen_phone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Your Phone Here"
-                android:gravity="center"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/montserrat"
-                android:layout_marginBottom="4dp"
-                android:padding="16dp"
-                android:background="@drawable/bg_edit_text"/>
+<!--            <EditText-->
+<!--                android:id="@+id/et_profile_screen_phone"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Your Phone Here"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:layout_marginBottom="4dp"-->
+<!--                android:padding="16dp"-->
+<!--                android:background="@drawable/bg_edit_text"/>-->
 
-            <!--Gender-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Gender"
-                android:textSize="16sp"
-                android:fontFamily="@font/montserrat_bold"
-                android:textColor="@color/white"/>
+<!--            &lt;!&ndash;Gender&ndash;&gt;-->
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Gender"-->
+<!--                android:textSize="16sp"-->
+<!--                android:fontFamily="@font/montserrat_bold"-->
+<!--                android:textColor="@color/white"/>-->
 
-            <EditText
-                android:id="@+id/et_profile_screen_gender"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Your Gender Here"
-                android:gravity="center"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@font/montserrat"
-                android:layout_marginBottom="4dp"
-                android:padding="16dp"
-                android:background="@drawable/bg_edit_text"/>
+<!--            <EditText-->
+<!--                android:id="@+id/et_profile_screen_gender"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:hint="Your Gender Here"-->
+<!--                android:gravity="center"-->
+<!--                android:layout_marginTop="4dp"-->
+<!--                android:fontFamily="@font/montserrat"-->
+<!--                android:layout_marginBottom="4dp"-->
+<!--                android:padding="16dp"-->
+<!--                android:background="@drawable/bg_edit_text"/>-->
 
             <!--Password-->
             <TextView

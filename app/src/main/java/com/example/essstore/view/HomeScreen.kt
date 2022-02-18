@@ -15,8 +15,10 @@ import com.example.essstore.common.Common.API_KEY
 import com.example.essstore.common.Common.nextScreenWithoutFinish
 import com.example.essstore.data.BoxProductsAdapter
 import com.example.essstore.data.RetrofitInstance
+import com.example.essstore.data.product
 import com.example.essstore.databinding.ActivityHomeScreenBinding
 import retrofit2.HttpException
+import retrofit2.Response
 import java.io.IOException
 
 class HomeScreen : AppCompatActivity() {
@@ -61,9 +63,14 @@ class HomeScreen : AppCompatActivity() {
 //"57b501f0"
     private fun fetchData(){
         lifecycleScope.launchWhenCreated {
+            val latest: Response<List<product>>
+            val hot: Response<List<product>>
+            val promotion: Response<List<product>>
             binding.homeScreenProgressBar.isVisible = true
-            val response= try {
-                RetrofitInstance.api.getProducts(API_KEY)
+            try {
+                latest = RetrofitInstance.api.getNewArrivals(API_KEY)
+                hot = RetrofitInstance.api.getHotProducts(API_KEY)
+                promotion =RetrofitInstance.api.getPromotions(API_KEY)
             } catch (e: IOException){
                 Log.e(ContentValues.TAG, "IOException: You might not have internet connection! $e")
                 binding.homeScreenProgressBar.isVisible = false
@@ -73,15 +80,17 @@ class HomeScreen : AppCompatActivity() {
                 binding.homeScreenProgressBar.isVisible = false
                 return@launchWhenCreated
             }
-            if(response.isSuccessful && response.body()!=null){
+            if(latest.isSuccessful && latest.body()!=null && hot.isSuccessful && hot.body()!=null && promotion.isSuccessful && promotion.body()!=null){
                 binding.homeScreenProgressBar.isVisible = false
                 binding.homeScreenLatestProductsLinearLayout.isVisible = true
                 binding.homeScreenHotProductsLinearLayout.isVisible = true
                 binding.homeScreenPromotionsLinearLayout.isVisible = true
-                productAdapterPromotions.products = response.body()!!
-                productAdapterLatest.products = response.body()!!
-                productAdapterHot.products = response.body()!!
-                Log.d(ContentValues.TAG, "${response.raw().request.url}")
+                productAdapterPromotions.products = promotion.body()!!
+                productAdapterLatest.products = latest.body()!!
+                productAdapterHot.products = hot.body()!!
+                Log.d(ContentValues.TAG, "${latest.raw().request.url}")
+                Log.d(ContentValues.TAG, "${hot.raw().request.url}")
+                Log.d(ContentValues.TAG, "${promotion.raw().request.url}")
             }
             else{
                 Log.e(ContentValues.TAG, "IOException: Unexpected Response!")

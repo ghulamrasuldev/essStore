@@ -54,7 +54,7 @@ class HotProducts : AppCompatActivity() {
         lifecycleScope.launchWhenCreated {
             binding.hotProductsScreenProgressBar.isVisible = true
             val response= try {
-                RetrofitInstance.api.getProducts(API_KEY)
+                RetrofitInstance.api.getHotProducts(API_KEY)
             } catch (e: IOException){
                 Log.e(ContentValues.TAG, "IOException: You might not have internet connection!")
                 binding.hotProductsScreenProgressBar.isVisible = false

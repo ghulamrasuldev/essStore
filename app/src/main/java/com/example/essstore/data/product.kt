@@ -8,8 +8,8 @@ data class product(
     val availableQuantity: Int,
     @SerializedName("category")
     val category: String,
-    @SerializedName("created_at")
-    val dateCreated: String,
+    @SerializedName("added_at")
+    var dateCreated: String = "sd",
     @SerializedName("discount")
     val discount: Int,
     @SerializedName("id")

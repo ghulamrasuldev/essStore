@@ -38,7 +38,7 @@ class WishList : AppCompatActivity() {
         lifecycleScope.launchWhenCreated {
             binding.wishListProgressBar.isVisible = true
             val response= try {
-                RetrofitInstance.api.getProducts(Common.API_KEY)
+                RetrofitInstance.api.getAllProducts(Common.API_KEY)
             } catch (e: IOException){
                 Log.e(ContentValues.TAG, "IOException: You might not have internet connection!")
                 binding.wishListProgressBar.isVisible = false

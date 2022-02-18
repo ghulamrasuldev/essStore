@@ -63,17 +63,16 @@ class Profile : AppCompatActivity() {
             }
             if(response.isSuccessful && response.body()!=null){
                 user = listOf(response.body()!!)
+
                 //Listeners
                 binding.etProfileScreenName.setText(user!![0].name)
                 binding.etProfileScreenEmail.setText(user!![0].email)
                 binding.etProfileScreenPhone.setText(user!![0].phone)
                 binding.etProfileScreenGender.setText(user!![0].gender)
                 binding.etProfileScreenUserName.setText(user!![0].username)
-
-
-
                 binding.profileScreenProgressBar.isVisible = false
                 Log.d(ContentValues.TAG, "${response.raw().request.url}")
+
             }
             else{
                 Log.e(ContentValues.TAG, "IOException: Unexpected Response!")

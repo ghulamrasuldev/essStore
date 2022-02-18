@@ -10,13 +10,17 @@ import androidx.core.content.ContextCompat.startActivity
 import com.example.essstore.data.product
 
 object Common {
-    val paths = arrayOf("item 1", "item 2", "item 3")
     val DISPLAY_TIME_LONG: Long= 2000
     val DISPLAY_TIME_SHORT: Long = 1000
     val DISPLAY_TIME_TOO_LONG: Long = 3000
-    val BASE_URL: String = "https://my.api.mockaroo.com/"
+
+    //http://192.168.18.59:3000/
+    //https://my.api.mockaroo.com/
+    val BASE_URL: String = "https://my.api.mockaroo.com"
     const val GET_PRODUCTS : String = "products"
+    const val HOT_PRODUCTS: String = "hot-products/"
     const val GET_USER: String = "user"
+    //57b501f0
     const val API_KEY: String = "57b501f0"
     const val PAYMENT_METHOD: String = "Payment Method"
     const val CASH_ON_DELIVERY: String = "Cash on Delivery"

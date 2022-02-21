@@ -3,11 +3,8 @@ package com.example.essstore.common
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.os.Handler
-import android.os.Looper
 import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
-import com.example.essstore.data.product
+import kotlinx.coroutines.CoroutineScope
 
 object Common {
     val DISPLAY_TIME_LONG: Long= 2000
@@ -30,6 +27,9 @@ object Common {
     const val PAYMENT_METHOD: String = "Payment Method"
     const val CASH_ON_DELIVERY: String = "Cash on Delivery"
     const val CARD_PAYMENT: String = "Card Payment"
+    const val LOGIN_STATUS: String = "Login Status"
+    const val LOGGED_IN: String = "Logged in"
+    const val NOT_LOGGED_IN: String = "Not Logged in"
 
 
     fun Context.nextScreenWithFinish(activity: Activity, classs : Class<*>) {
@@ -44,7 +44,7 @@ object Common {
         activity.finishAffinity()
     }
 
-    fun Context.nextScreenWithoutFinish(activity: Activity, classs : Class<*>) {
+    fun Context.nextScreenWithoutFinish(activity: Context, classs: Class<*>) {
         val intent = Intent(activity, classs)
         startActivity(intent)
     }

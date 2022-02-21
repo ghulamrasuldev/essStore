@@ -5,11 +5,14 @@ import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.essstore.cart.cartProductViewModel
+import com.example.essstore.common.Common.LOGIN_STATUS
+import com.example.essstore.common.Common.NOT_LOGGED_IN
 import com.example.essstore.common.Common.nextScreenWithoutFinish
 import com.example.essstore.data.CartAdapter
 import com.example.essstore.databinding.ActivityCartScreenBinding
 
 class CartScreen : AppCompatActivity() {
+    private lateinit var STATUS: String
     private lateinit var cartAdapter: CartAdapter
     private lateinit var binding: ActivityCartScreenBinding
     lateinit var mCartViewModel: cartProductViewModel
@@ -17,7 +20,7 @@ class CartScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityCartScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        STATUS = intent.getStringExtra(LOGIN_STATUS).toString()
         mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
         setUpRecyclerView()
         mCartViewModel.readAllData.observe(this, androidx.lifecycle.Observer { product ->
@@ -29,10 +32,18 @@ class CartScreen : AppCompatActivity() {
         }
 
         binding.cartScreenProceed.setOnClickListener{
-            nextScreenWithoutFinish(
-                this,
-                SelectPaymentMethod::class.java
-            )
+
+            if (STATUS == NOT_LOGGED_IN){
+                nextScreenWithoutFinish(
+                    this,
+                    GetPersonalInfo::class.java)
+            }
+            else{
+                nextScreenWithoutFinish(
+                    this,
+                    SelectPaymentMethod::class.java
+                )
+            }
         }
     }
 

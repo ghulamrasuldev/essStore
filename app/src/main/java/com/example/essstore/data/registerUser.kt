@@ -4,10 +4,7 @@ package com.example.essstore.data
 import com.google.gson.annotations.SerializedName
 
 data class registerUser(
-    @SerializedName("email")
-    val email: String,
-    @SerializedName("password")
-    val password: String,
-    @SerializedName("username")
-    val username: String
+    var email: String,
+    var username: String,
+    var password: String
 )

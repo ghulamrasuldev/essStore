@@ -1,12 +1,8 @@
 package com.example.essstore.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.widget.Toast
-import com.example.essstore.common.Common
 import com.example.essstore.common.Common.makeToast
 import com.example.essstore.common.Common.nextScreenWithFinishAffinity
 import com.example.essstore.common.Common.nextScreenWithoutFinish

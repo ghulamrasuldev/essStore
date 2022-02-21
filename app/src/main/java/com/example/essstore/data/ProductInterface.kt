@@ -31,7 +31,7 @@ interface ProductInterface {
     suspend fun getUser(@Query("key") key: String): Response<user>
 
     @POST(REGISTER_USER)
-    fun registerUser(@Body body: registerUser): Response<registeredUserResponse>
+    suspend fun registerUser(@Body body: registerUser): Response<registeredUserResponse>
 }
 
 //@Query("key") key: String

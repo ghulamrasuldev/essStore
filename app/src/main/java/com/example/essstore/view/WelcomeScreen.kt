@@ -3,8 +3,11 @@ package com.example.essstore.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.essstore.common.Common.LOGIN_STATUS
+import com.example.essstore.common.Common.NOT_LOGGED_IN
 import com.example.essstore.common.Common.nextScreenWithFinish
 import com.example.essstore.common.Common.nextScreenWithoutFinish
+import com.example.essstore.common.Common.nextScreenWithoutFinishAndExtras
 import com.example.essstore.databinding.ActivityWelcomeScreenBinding
 
 class WelcomeScreen : AppCompatActivity() {
@@ -26,10 +29,12 @@ class WelcomeScreen : AppCompatActivity() {
         }
 
         binding.btnWelcomeScreenExplore.setOnClickListener{
-            nextScreenWithFinish(this, HomeScreen::class.java)
+            nextScreenWithoutFinishAndExtras(this, HomeScreen::class.java, LOGIN_STATUS, NOT_LOGGED_IN)
         }
 
     }
+
+
 
 
 }

@@ -12,7 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.essstore.R
 import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common.API_KEY
+import com.example.essstore.common.Common.LOGIN_STATUS
+import com.example.essstore.common.Common.NOT_LOGGED_IN
 import com.example.essstore.common.Common.nextScreenWithoutFinish
+import com.example.essstore.common.Common.nextScreenWithoutFinishAndExtras
 import com.example.essstore.data.BoxProductsAdapter
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.product
@@ -23,6 +26,7 @@ import java.io.IOException
 
 class HomeScreen : AppCompatActivity() {
     val TAG = "Home Screen"
+    lateinit var STATUS: String
     lateinit var mCartViewModel: cartProductViewModel
     private lateinit var binding: ActivityHomeScreenBinding
     private lateinit var productAdapterLatest: BoxProductsAdapter
@@ -31,6 +35,7 @@ class HomeScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeScreenBinding.inflate(layoutInflater)
+        STATUS = intent.getStringExtra(LOGIN_STATUS).toString()
         setContentView(binding.root)
         mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
         setUpRecyclerViewLatest()
@@ -56,7 +61,7 @@ class HomeScreen : AppCompatActivity() {
         }
 
         binding.btnHomeScreenMenu.setOnClickListener{
-            nextScreenWithoutFinish(this, MainMenu::class.java)
+            nextScreenWithoutFinishAndExtras(this, MainMenu::class.java, LOGIN_STATUS, STATUS)
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
         }
     }

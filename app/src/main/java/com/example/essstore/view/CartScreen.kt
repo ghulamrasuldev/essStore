@@ -8,6 +8,7 @@ import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common.LOGIN_STATUS
 import com.example.essstore.common.Common.NOT_LOGGED_IN
 import com.example.essstore.common.Common.nextScreenWithoutFinish
+import com.example.essstore.common.Common.nextScreenWithoutFinishAndExtras
 import com.example.essstore.data.CartAdapter
 import com.example.essstore.databinding.ActivityCartScreenBinding
 
@@ -34,14 +35,19 @@ class CartScreen : AppCompatActivity() {
         binding.cartScreenProceed.setOnClickListener{
 
             if (STATUS == NOT_LOGGED_IN){
-                nextScreenWithoutFinish(
+                nextScreenWithoutFinishAndExtras(
                     this,
-                    GetPersonalInfo::class.java)
+                    GetPersonalInfo::class.java,
+                    LOGIN_STATUS,
+                    STATUS
+                )
             }
             else{
-                nextScreenWithoutFinish(
+                nextScreenWithoutFinishAndExtras(
                     this,
-                    SelectPaymentMethod::class.java
+                    SelectPaymentMethod::class.java,
+                    LOGIN_STATUS,
+                    STATUS
                 )
             }
         }

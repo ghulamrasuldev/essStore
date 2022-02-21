@@ -177,7 +177,7 @@
 
     <!--Favourite Products-->
     <LinearLayout
-        android:id="@+id/btn_menu_latest_products"
+        android:id="@+id/btn_menu_favourite_products"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"

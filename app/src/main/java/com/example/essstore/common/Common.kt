@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
-import kotlinx.coroutines.CoroutineScope
+import com.example.essstore.view.Login
 
 object Common {
     val DISPLAY_TIME_LONG: Long= 2000
@@ -52,6 +52,20 @@ object Common {
     fun Context.nextScreenWithoutFinishAndExtras(activity: Activity, classs : Class<*>, key : String, value: String) {
         val intent = Intent(activity, classs)
         intent.putExtra(key, value)
+        startActivity(intent)
+    }
+
+    fun Context.nextScreenWithFinishAffinityAndExtras(activity: Activity, classs: Class<*>, key: String, value: String) {
+        val intent = Intent(activity, classs)
+        intent.putExtra(key, value)
+        startActivity(intent)
+        activity.finishAffinity()
+    }
+
+    fun Context.nextScreenWithoutFinishAndExtrasAndExtras(activity: Activity, classs : Class<*>, key : String, value: String, key2: String, value2: String) {
+        val intent = Intent(activity, classs)
+        intent.putExtra(key, value)
+        intent.putExtra(key2, value2)
         startActivity(intent)
     }
 

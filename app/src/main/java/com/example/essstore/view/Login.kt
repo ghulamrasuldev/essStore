@@ -1,13 +1,10 @@
 package com.example.essstore.view
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import com.example.essstore.R
-import com.example.essstore.common.Common.DISPLAY_TIME_LONG
-import com.example.essstore.common.Common.nextScreenWithFinish
+import com.example.essstore.common.Common.LOGGED_IN
+import com.example.essstore.common.Common.LOGIN_STATUS
+import com.example.essstore.common.Common.nextScreenWithFinishAffinityAndExtras
 import com.example.essstore.databinding.ActivityLoginBinding
 
 class Login : AppCompatActivity() {
@@ -19,7 +16,12 @@ class Login : AppCompatActivity() {
 
         //Listeners
         binding.btnLoginScreenLogin.setOnClickListener{
-            nextScreenWithFinish(this, HomeScreen::class.java)
+            nextScreenWithFinishAffinityAndExtras(
+                this,
+                HomeScreen::class.java,
+                LOGIN_STATUS,
+                LOGGED_IN
+            )
         }
 
         binding.btnLoginScreenBack.setOnClickListener{

@@ -10,7 +10,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common
+import com.example.essstore.common.Common.LOGIN_STATUS
 import com.example.essstore.common.Common.nextScreenWithoutFinish
+import com.example.essstore.common.Common.nextScreenWithoutFinishAndExtras
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.SimpleProductsAdapter
 import com.example.essstore.databinding.ActivityFavouriteProductsBinding
@@ -19,12 +21,14 @@ import java.io.IOException
 
 class FavouriteProducts : AppCompatActivity() {
     private val TAG = "Hot Products"
+    private lateinit var STATUS: String
     lateinit var mCartViewModel: cartProductViewModel
     private lateinit var binding: ActivityFavouriteProductsBinding
     private  lateinit var productAdapter: SimpleProductsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFavouriteProductsBinding.inflate(layoutInflater)
+        STATUS = intent.getStringExtra(LOGIN_STATUS).toString()
         mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
 
         setContentView(binding.root)
@@ -38,9 +42,11 @@ class FavouriteProducts : AppCompatActivity() {
         }
 
         binding.btnFavouriteProductsCart.setOnClickListener{
-            nextScreenWithoutFinish(
+            nextScreenWithoutFinishAndExtras(
                 this,
-                CartScreen::class.java
+                CartScreen::class.java,
+                LOGIN_STATUS,
+                STATUS
             )
         }
     }

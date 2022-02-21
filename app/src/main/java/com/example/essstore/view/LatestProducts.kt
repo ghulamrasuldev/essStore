@@ -14,7 +14,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common
 import com.example.essstore.common.Common.API_KEY
+import com.example.essstore.common.Common.LOGIN_STATUS
 import com.example.essstore.common.Common.nextScreenWithoutFinish
+import com.example.essstore.common.Common.nextScreenWithoutFinishAndExtras
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.SimpleProductsAdapter
 import com.example.essstore.databinding.ActivityLatestProductsBinding
@@ -23,16 +25,16 @@ import java.io.IOException
 
 class LatestProducts : AppCompatActivity() {
     val TAG = "Latest Prodcts"
+    private lateinit var STATUS: String
     lateinit var mCartViewModel: cartProductViewModel
     private lateinit var binding: ActivityLatestProductsBinding
     private  lateinit var productAdapter: SimpleProductsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityLatestProductsBinding.inflate(layoutInflater)
+        STATUS = intent.getStringExtra(LOGIN_STATUS).toString()
         setContentView(binding.root)
         mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
-
-
         setUpRecyclerView()
         Log.d(TAG, "Running Fine")
         fetchData()
@@ -43,9 +45,11 @@ class LatestProducts : AppCompatActivity() {
         }
 
         binding.btnLatestProductsCart.setOnClickListener{
-            nextScreenWithoutFinish(
+            nextScreenWithoutFinishAndExtras(
                 this,
-                CartScreen::class.java
+                CartScreen::class.java,
+                LOGIN_STATUS,
+                STATUS
             )
         }
 

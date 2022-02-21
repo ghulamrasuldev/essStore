@@ -45,19 +45,19 @@ class HomeScreen : AppCompatActivity() {
         fetchData()
         //Listeners
         binding.homeScreenLatestProductsViewAll.setOnClickListener{
-            nextScreenWithoutFinish(this, LatestProducts::class.java)
+            nextScreenWithoutFinishAndExtras(this, LatestProducts::class.java, LOGIN_STATUS, STATUS)
         }
 
         binding.homeScreenHotProductsViewAll.setOnClickListener{
-            nextScreenWithoutFinish(this, HotProducts::class.java)
+            nextScreenWithoutFinishAndExtras(this, HotProducts::class.java, LOGIN_STATUS, STATUS)
         }
 
         binding.homeScreenPromotionsViewAll.setOnClickListener{
-            nextScreenWithoutFinish(this, Promotions::class.java)
+            nextScreenWithoutFinishAndExtras(this, Promotions::class.java, LOGIN_STATUS, STATUS)
         }
 
         binding.btnHomeScreenCart.setOnClickListener{
-            nextScreenWithoutFinish(this, CartScreen::class.java)
+            nextScreenWithoutFinishAndExtras(this, CartScreen::class.java, LOGIN_STATUS, STATUS)
         }
 
         binding.btnHomeScreenMenu.setOnClickListener{

@@ -54,12 +54,13 @@ class MainMenu : AppCompatActivity() {
             nextScreenWithoutFinish(this, Profile::class.java)
         }
 
-        binding.btnMenuLatestProducts.setOnClickListener{
-            nextScreenWithoutFinish(this, FavouriteProducts::class.java)
+        binding.btnMenuFavouriteProducts.setOnClickListener{
+            nextScreenWithoutFinishAndExtras(this, FavouriteProducts::class.java, LOGIN_STATUS, STATUS)
         }
 
         binding.btnMenuHome.setOnClickListener{
-            nextScreenWithoutFinish(this, HomeScreen::class.java)
+            finish()
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
 
         binding.btnMenuMakeRequest.setOnClickListener{

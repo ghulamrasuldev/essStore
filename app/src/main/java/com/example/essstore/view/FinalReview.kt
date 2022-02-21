@@ -24,13 +24,16 @@ import com.example.essstore.cart.cartProduct
 import com.example.essstore.cart.cartProductDAO
 import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common
+import com.example.essstore.common.Common.LOGIN_STATUS
 import com.example.essstore.common.Common.PAYMENT_METHOD
 import com.example.essstore.common.Common.nextScreenWithFinish
+import com.example.essstore.common.Common.nextScreenWithoutFinishAndExtras
 import com.example.essstore.data.CartAdapter
 import com.example.essstore.data.FinalReviewAdapter
 
 
 class FinalReview : AppCompatActivity() {
+    private lateinit var STATUS: String
     private lateinit var notificationManager: NotificationManager
     private lateinit var notificationChannel: NotificationChannel
     private lateinit var builder: Notification.Builder
@@ -48,6 +51,7 @@ class FinalReview : AppCompatActivity() {
         binding = ActivityFinalReviewBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val paymentMethod = intent.getStringExtra(PAYMENT_METHOD)
+        STATUS = intent.getStringExtra(LOGIN_STATUS).toString()
         binding.finalReviewScreenPaymentMethod.text = paymentMethod
         mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
         notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
@@ -70,11 +74,11 @@ class FinalReview : AppCompatActivity() {
 
             createNotification()
 
-            val cartProductDAO: cartProductDAO
-
-            nextScreenWithFinish(
+            nextScreenWithoutFinishAndExtras(
                 this,
-                OrderCreatedThankYou::class.java
+                OrderCreatedThankYou::class.java,
+                LOGIN_STATUS,
+                STATUS
             )
         }
 

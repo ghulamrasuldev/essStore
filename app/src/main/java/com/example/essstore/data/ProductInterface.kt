@@ -1,11 +1,11 @@
 package com.example.essstore.data
 
 import com.example.essstore.common.Common.ALL_PRODUCTS
-import com.example.essstore.common.Common.GET_PRODUCTS
 import com.example.essstore.common.Common.GET_PROMOTIONS
 import com.example.essstore.common.Common.GET_USER
 import com.example.essstore.common.Common.GET_WISH_LIST
 import com.example.essstore.common.Common.HOT_PRODUCTS
+import com.example.essstore.common.Common.LOGIN_USER
 import com.example.essstore.common.Common.NEW_ARRIVALS
 import com.example.essstore.common.Common.REGISTER_USER
 import retrofit2.Response
@@ -32,6 +32,9 @@ interface ProductInterface {
 
     @POST(REGISTER_USER)
     suspend fun registerUser(@Body body: registerUser): Response<registeredUserResponse>
+
+    @POST(LOGIN_USER)
+    suspend fun loginRegisteredUser(@Body body: loginUser): Response<registeredUserResponse>
 }
 
 //@Query("key") key: String

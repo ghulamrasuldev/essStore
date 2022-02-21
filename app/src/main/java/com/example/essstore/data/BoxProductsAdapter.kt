@@ -1,5 +1,6 @@
 package com.example.essstore.data
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -9,6 +10,7 @@ import com.example.essstore.cart.cartProduct
 import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common.makeToast
 import com.example.essstore.databinding.BoxProductCardBinding
+import com.squareup.picasso.Picasso
 
 class BoxProductsAdapter (mCartViewModel: cartProductViewModel) : RecyclerView.Adapter<BoxProductsAdapter.ProductViewHolder>() {
 
@@ -48,10 +50,14 @@ class BoxProductsAdapter (mCartViewModel: cartProductViewModel) : RecyclerView.A
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
         val product = products[position]
+        Log.d("product", "${product.productImage}")
+
         holder.binding.apply {
             boxProductCardTitle.text = product.productName
             boxProductCardDescription.text = product.productDescription
             boxProductCardPrice.text = "$ ${product.productPrice}"
+//            Picasso.get().load("${product.productImage}").into(boxProductCardImage);
+
         }
 
         holder.binding.boxProductCardAddToCart.setOnClickListener{

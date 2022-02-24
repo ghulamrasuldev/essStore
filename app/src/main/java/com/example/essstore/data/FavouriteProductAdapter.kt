@@ -6,15 +6,20 @@ import com.example.essstore.favourite.favouriteProductViewModel
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.essstore.cart.cartProduct
+import com.example.essstore.cart.cartProductViewModel
+import com.example.essstore.databinding.FavouriteProductCardBinding
+import com.example.essstore.view.FavouriteProducts
 
-class FavouriteProductAdapter(mfavouriteProductViewModel: favouriteProductViewModel): RecyclerView.Adapter<FavouriteProductAdapter.favouriteViewHolder>(){
+class FavouriteProductAdapter(mfavouriteProductViewModel: favouriteProductViewModel, mCartViewModel: cartProductViewModel): RecyclerView.Adapter<FavouriteProductAdapter.favouriteViewHolder>(){
     private var productList = emptyList<favouriteProduct>()
-    val mCartViewmodel = mfavouriteProductViewModel
-    class favouriteViewHolder (val binding: GeneralProductCardBinding): RecyclerView.ViewHolder(binding.root)
+    val mFavouriteViewmodel = mfavouriteProductViewModel
+    val mCartViewmodel = mCartViewModel
+    class favouriteViewHolder (val binding: FavouriteProductCardBinding): RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavouriteProductAdapter.favouriteViewHolder {
         return favouriteViewHolder(
-            GeneralProductCardBinding.inflate(
+            FavouriteProductCardBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -25,9 +30,27 @@ class FavouriteProductAdapter(mfavouriteProductViewModel: favouriteProductViewMo
     override fun onBindViewHolder(holder: FavouriteProductAdapter.favouriteViewHolder, position: Int) {
         val product = productList[position]
         holder.binding.apply {
-            generalProductCardTitle.text = product.productName
-            generalProductCardPrice.text = "$ ${product.productPrice}"
-            generalProductCardDescription.text = product.productDescription
+            favouriteProductCardTitle.text = product.productName
+            favouriteProductCardPrice.text = "$ ${product.productPrice}"
+            favouriteProductCardDescription.text = product.productDescription
+        }
+
+        holder.binding.favouriteProductCardAddToCart.setOnClickListener{
+            mCartViewmodel.addProductToCart(
+                cartProduct(
+                    product.id,
+                    product.availableQuantity,
+                    product.category,
+                    product.dateCreated,
+                    product.discount,
+                    product.productDescription,
+                    product.productImage,
+                    product.productName,
+                    product.productPrice,
+                    product.soldQuantity,
+                    selectedQuantity = 1
+                )
+            )
         }
     }
 

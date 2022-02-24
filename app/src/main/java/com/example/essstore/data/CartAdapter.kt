@@ -1,8 +1,12 @@
 package com.example.essstore.data
 
 
+import android.content.DialogInterface
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.example.essstore.cart.cartProduct
 import com.example.essstore.cart.cartProductViewModel
@@ -34,13 +38,7 @@ class CartAdapter(mCartViewModel: cartProductViewModel): RecyclerView.Adapter<Ca
         }
 
         holder.binding.cartProductDeleteItem.setOnClickListener{
-            makeToast(
-                holder.itemView.context,
-                "Product Removed!"
-            )
-            mCartViewmodel.deleteProduct(
-                product.id
-            )
+            deleteProductAlert(holder.itemView, product)
         }
 
         holder.binding.cartProductIncrement.setOnClickListener{
@@ -66,5 +64,30 @@ class CartAdapter(mCartViewModel: cartProductViewModel): RecyclerView.Adapter<Ca
 
     override fun getItemCount(): Int {
         return productList.size
+    }
+
+    fun deleteProductAlert(view: View, product: cartProduct){
+
+        val positiveButtonClick = { dialog: DialogInterface, which: Int ->
+            Toast.makeText(view.context,
+                "Product deleted", Toast.LENGTH_SHORT).show()
+            mCartViewmodel.deleteProduct(
+                product.id
+            )
+        }
+        val negativeButtonClick = { dialog: DialogInterface, which: Int ->
+            Toast.makeText(view.context,
+                "Action reverted!", Toast.LENGTH_SHORT).show()
+        }
+
+        val builder = AlertDialog.Builder(view.context)
+        with(builder)
+        {
+            setTitle("Delete product from Cart? ")
+            setMessage("Please confirm that you want to delete product from your cart.")
+            setPositiveButton("OK", DialogInterface.OnClickListener(positiveButtonClick))
+            setNegativeButton("No", DialogInterface.OnClickListener(negativeButtonClick))
+            show()
+        }
     }
 }

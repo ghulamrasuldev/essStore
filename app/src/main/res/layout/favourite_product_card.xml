@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/general_product_card_image"
+            android:id="@+id/favourite_product_card_image"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="100dp"
@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/general_product_card_title"
+                    android:id="@+id/favourite_product_card_title"
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="wrap_content"
@@ -41,7 +41,7 @@
                     android:textColor="@color/black"/>
 
                 <TextView
-                    android:id="@+id/general_product_card_price"
+                    android:id="@+id/favourite_product_card_price"
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
                 android:gravity="center">
 
                 <TextView
-                    android:id="@+id/general_product_card_description"
+                    android:id="@+id/favourite_product_card_description"
                     android:layout_width="0dp"
                     android:layout_weight="5"
                     android:layout_height="25dp"
@@ -72,7 +72,7 @@
                     android:textColor="@color/black"/>
 
                 <ImageView
-                    android:id="@+id/general_product_card_favourite"
+                    android:id="@+id/favourite_product_card_favourite"
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="wrap_content"
@@ -83,7 +83,7 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/general_product_card_add_to_cart"
+                android:id="@+id/favourite_product_card_add_to_cart"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="Add to Cart"

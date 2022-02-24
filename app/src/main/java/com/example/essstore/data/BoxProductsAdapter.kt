@@ -1,5 +1,7 @@
 package com.example.essstore.data
 
+import android.graphics.Color
+import android.graphics.PorterDuff
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -84,7 +86,6 @@ class BoxProductsAdapter (mCartViewModel: cartProductViewModel, mfavouriteViewMo
                 )
             )
         }
-
 
         holder.binding.boxProductCardFavourite.setOnClickListener{
             mfavouriteViewModel.addProductToFavourite(

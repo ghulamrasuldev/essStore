@@ -25,6 +25,7 @@ class FavouriteProducts : AppCompatActivity() {
     private val TAG = "Hot Products"
     private lateinit var STATUS: String
     lateinit var mFavouriteProductViewModel: favouriteProductViewModel
+    lateinit var mCartViewModel: cartProductViewModel
     private lateinit var binding: ActivityFavouriteProductsBinding
     private  lateinit var productAdapter: FavouriteProductAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +33,7 @@ class FavouriteProducts : AppCompatActivity() {
         binding = ActivityFavouriteProductsBinding.inflate(layoutInflater)
         STATUS = intent.getStringExtra(LOGIN_STATUS).toString()
         mFavouriteProductViewModel = ViewModelProvider(this).get(favouriteProductViewModel::class.java)
+        mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
 
         setContentView(binding.root)
         setUpRecyclerView()
@@ -56,7 +58,7 @@ class FavouriteProducts : AppCompatActivity() {
     }
 
     private fun setUpRecyclerView() = binding.favouriteProductsScreenRecyclerView.apply{
-        productAdapter = FavouriteProductAdapter(mFavouriteProductViewModel)
+        productAdapter = FavouriteProductAdapter(mFavouriteProductViewModel, mCartViewModel)
         adapter = productAdapter
         layoutManager = LinearLayoutManager(this@FavouriteProducts)
     }

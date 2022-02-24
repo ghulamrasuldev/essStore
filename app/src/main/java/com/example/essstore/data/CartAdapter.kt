@@ -31,7 +31,6 @@ class CartAdapter(mCartViewModel: cartProductViewModel): RecyclerView.Adapter<Ca
             cartProductPrice.text = "$ ${product.productPrice}"
             cartProductDescription.text = product.productDescription
             cartProductSelectedQuantity.text = product.selectedQuantity.toString()
-
         }
 
         holder.binding.cartProductDeleteItem.setOnClickListener{

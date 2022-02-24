@@ -13,28 +13,32 @@ import com.example.essstore.common.Common
 import com.example.essstore.common.Common.LOGIN_STATUS
 import com.example.essstore.common.Common.nextScreenWithoutFinish
 import com.example.essstore.common.Common.nextScreenWithoutFinishAndExtras
+import com.example.essstore.data.FavouriteProductAdapter
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.SimpleProductsAdapter
 import com.example.essstore.databinding.ActivityFavouriteProductsBinding
+import com.example.essstore.favourite.favouriteProductViewModel
 import retrofit2.HttpException
 import java.io.IOException
 
 class FavouriteProducts : AppCompatActivity() {
     private val TAG = "Hot Products"
     private lateinit var STATUS: String
-    lateinit var mCartViewModel: cartProductViewModel
+    lateinit var mFavouriteProductViewModel: favouriteProductViewModel
     private lateinit var binding: ActivityFavouriteProductsBinding
-    private  lateinit var productAdapter: SimpleProductsAdapter
+    private  lateinit var productAdapter: FavouriteProductAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFavouriteProductsBinding.inflate(layoutInflater)
         STATUS = intent.getStringExtra(LOGIN_STATUS).toString()
-        mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
+        mFavouriteProductViewModel = ViewModelProvider(this).get(favouriteProductViewModel::class.java)
 
         setContentView(binding.root)
         setUpRecyclerView()
         Log.d(TAG, "Running Fine")
-        fetchData()
+        mFavouriteProductViewModel.readAllData.observe(this, androidx.lifecycle.Observer { product ->
+            productAdapter.setData(product)
+        })
 
         //Listeners
         binding.favouriteScreenBack.setOnClickListener{
@@ -51,35 +55,8 @@ class FavouriteProducts : AppCompatActivity() {
         }
     }
 
-    private fun fetchData() {
-        lifecycleScope.launchWhenCreated {
-            binding.favouriteProductsScreenProgressBar.isVisible = true
-            val response= try {
-                RetrofitInstance.api.getAllProducts(Common.API_KEY)
-            } catch (e: IOException){
-                Log.e(ContentValues.TAG, "IOException: You might not have internet connection!")
-                binding.favouriteProductsScreenProgressBar.isVisible = false
-                return@launchWhenCreated
-            }catch (e: HttpException){
-                Log.e(ContentValues.TAG, "IOException: Unexpected Response!")
-                binding.favouriteProductsScreenProgressBar.isVisible = false
-                return@launchWhenCreated
-            }
-            if(response.isSuccessful && response.body()!=null){
-                productAdapter.products = response.body()!!
-                binding.favouriteProductsScreenProgressBar.isVisible = false
-                Log.d(ContentValues.TAG, "${response.raw().request.url}")
-            }
-            else{
-                Log.e(ContentValues.TAG, "IOException: Unexpected Response!")
-                binding.favouriteProductsScreenProgressBar.isVisible = false
-
-            }
-        }
-    }
-
     private fun setUpRecyclerView() = binding.favouriteProductsScreenRecyclerView.apply{
-        productAdapter = SimpleProductsAdapter(mCartViewModel)
+        productAdapter = FavouriteProductAdapter(mFavouriteProductViewModel)
         adapter = productAdapter
         layoutManager = LinearLayoutManager(this@FavouriteProducts)
     }

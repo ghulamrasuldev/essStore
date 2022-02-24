@@ -1,18 +1,18 @@
-package com.example.essstore.cart
+package com.example.essstore.favourite
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [cartProduct::class], version = 3, exportSchema = false)
-abstract class cartProductDatabase: RoomDatabase(){
-    abstract fun cartProductDAO(): cartProductDAO
+@Database(entities = [favouriteProduct::class], version = 1, exportSchema = false)
+abstract class favouriteProductDatabase: RoomDatabase(){
+    abstract fun favouriteProductDAO(): favouriteProductDAO
     companion object{
         @Volatile
-        private var INSTANCE: cartProductDatabase? = null
+        private var INSTANCE: favouriteProductDatabase? = null
 
-        fun getDatabase(context: Context) : cartProductDatabase {
+        fun getDatabase(context: Context) : favouriteProductDatabase {
             val tempInstance= INSTANCE
             if(tempInstance!=null){
                 return tempInstance
@@ -20,8 +20,8 @@ abstract class cartProductDatabase: RoomDatabase(){
             synchronized(this){
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    cartProductDatabase::class.java,
-                    "productsInCart"
+                    favouriteProductDatabase::class.java,
+                    "favourite"
                 ).fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 return instance

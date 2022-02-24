@@ -13,7 +13,8 @@ object Common {
 
     //http://192.168.18.59:3000/
     //https://my.api.mockaroo.com/
-    val BASE_URL: String = "http://192.168.18.59:3000/"
+    val BASE_URL: String = "https://my.api.mockaroo.com/"
+    val BASE_URL_TWO: String = "https://my.api.mockaroo.com/"
     const val GET_PRODUCTS : String = "products"
     const val HOT_PRODUCTS: String = "hot-products/"
     const val GET_PROMOTIONS: String = "promotions/"

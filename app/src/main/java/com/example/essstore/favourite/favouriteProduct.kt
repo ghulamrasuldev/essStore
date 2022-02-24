@@ -1,11 +1,10 @@
-package com.example.essstore.cart
+package com.example.essstore.favourite
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
 
-@Entity(tableName = "productsInCart")
-data class cartProduct (
+@Entity(tableName = "favourite")
+data class favouriteProduct (
     @PrimaryKey
     val id: Int,
     val availableQuantity: Int,

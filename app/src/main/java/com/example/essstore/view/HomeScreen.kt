@@ -20,6 +20,7 @@ import com.example.essstore.data.BoxProductsAdapter
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.product
 import com.example.essstore.databinding.ActivityHomeScreenBinding
+import com.example.essstore.favourite.favouriteProductViewModel
 import retrofit2.HttpException
 import retrofit2.Response
 import java.io.IOException
@@ -28,6 +29,7 @@ class HomeScreen : AppCompatActivity() {
     val TAG = "Home Screen"
     lateinit var STATUS: String
     lateinit var mCartViewModel: cartProductViewModel
+    lateinit var mfavouriteViewModel: favouriteProductViewModel
     private lateinit var binding: ActivityHomeScreenBinding
     private lateinit var productAdapterLatest: BoxProductsAdapter
     private lateinit var productAdapterHot: BoxProductsAdapter
@@ -38,6 +40,7 @@ class HomeScreen : AppCompatActivity() {
         STATUS = intent.getStringExtra(LOGIN_STATUS).toString()
         setContentView(binding.root)
         mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
+        mfavouriteViewModel = ViewModelProvider(this).get(favouriteProductViewModel::class.java)
         setUpRecyclerViewLatest()
         setUpRecyclerViewHot()
         setUpRecyclerViewPromotions()
@@ -106,19 +109,19 @@ class HomeScreen : AppCompatActivity() {
     }
 
     private fun setUpRecyclerViewLatest() = binding.homeScreenRecyclerviewLatest.apply{
-        productAdapterLatest = BoxProductsAdapter(mCartViewModel)
+        productAdapterLatest = BoxProductsAdapter(mCartViewModel, mfavouriteViewModel)
         adapter = productAdapterLatest
         layoutManager = LinearLayoutManager(this@HomeScreen, RecyclerView.HORIZONTAL, false)
     }
 
     private fun setUpRecyclerViewHot() = binding.homeScreenRecyclerviewHot.apply{
-        productAdapterHot = BoxProductsAdapter(mCartViewModel)
+        productAdapterHot = BoxProductsAdapter(mCartViewModel, mfavouriteViewModel)
         adapter = productAdapterHot
         layoutManager = LinearLayoutManager(this@HomeScreen, RecyclerView.HORIZONTAL, false)
     }
 
     private fun setUpRecyclerViewPromotions() = binding.homeScreenRecyclerviewPromotions.apply{
-        productAdapterPromotions = BoxProductsAdapter(mCartViewModel)
+        productAdapterPromotions = BoxProductsAdapter(mCartViewModel, mfavouriteViewModel)
         adapter = productAdapterPromotions
         layoutManager = LinearLayoutManager(this@HomeScreen, RecyclerView.HORIZONTAL, false)
     }

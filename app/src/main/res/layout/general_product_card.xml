@@ -55,20 +55,29 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="35dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center">
 
                 <TextView
                     android:id="@+id/general_product_card_description"
                     android:layout_width="0dp"
                     android:layout_weight="5"
-                    android:layout_height="wrap_content"
+                    android:layout_height="25dp"
                     android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     android:textSize="10sp"
-                    android:padding="4dp"
-                    android:maxLength="75"
+                    android:maxLength="50"
                     android:fontFamily="@font/montserrat"
+                    android:layout_marginBottom="4dp"
                     android:textColor="@color/black"/>
 
+                <ImageView
+                    android:id="@+id/general_product_card_favourite"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/icon_favourite"
+                    android:clickable="true"/>
 
             </LinearLayout>
 
@@ -77,8 +86,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:text="Add to Cart"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
                 android:background="@drawable/bg_button_ripple_effect"/>
 
         </LinearLayout>

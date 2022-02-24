@@ -43,13 +43,22 @@
                 <TextView
                     android:id="@+id/favourite_product_card_price"
                     android:layout_width="0dp"
-                    android:layout_weight="2"
+                    android:layout_weight="3"
                     android:layout_height="wrap_content"
                     android:text="Price: $35"
                     android:textSize="14sp"
                     android:padding="4dp"
                     android:fontFamily="@font/montserrat"
                     android:textColor="@color/secondary_color"/>
+
+                <ImageButton
+                    android:id="@+id/favourite_product_delete_item"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="30dp"
+                    android:src="@drawable/icon_delete"
+                    android:background="@drawable/bg_buttton_ripple_effect_small"
+                    android:padding="2dp"/>
 
             </LinearLayout>
 

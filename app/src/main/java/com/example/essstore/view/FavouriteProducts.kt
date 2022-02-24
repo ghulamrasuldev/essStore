@@ -40,6 +40,8 @@ class FavouriteProducts : AppCompatActivity() {
         Log.d(TAG, "Running Fine")
         mFavouriteProductViewModel.readAllData.observe(this, androidx.lifecycle.Observer { product ->
             productAdapter.setData(product)
+            binding.favouriteNoProductInCart.isVisible = productAdapter.productList.isEmpty()
+
         })
 
         //Listeners

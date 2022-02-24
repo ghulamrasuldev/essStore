@@ -17,12 +17,14 @@ import com.example.essstore.common.Common.nextScreenWithoutFinishAndExtras
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.SimpleProductsAdapter
 import com.example.essstore.databinding.ActivityPromotionsBinding
+import com.example.essstore.favourite.favouriteProductViewModel
 import retrofit2.HttpException
 import java.io.IOException
 
 class Promotions : AppCompatActivity() {
     private lateinit var STATUS: String
     lateinit var mCartViewModel: cartProductViewModel
+    lateinit var mfavouriteproductViewModel: favouriteProductViewModel
     private lateinit var productAdapter: SimpleProductsAdapter
     private lateinit var binding: ActivityPromotionsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +33,7 @@ class Promotions : AppCompatActivity() {
         setContentView(binding.root)
         STATUS = intent.getStringExtra(LOGIN_STATUS).toString()
         mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
+        mfavouriteproductViewModel = ViewModelProvider(this).get(favouriteProductViewModel::class.java)
 
         setUpRecyclerView()
         fetchData()
@@ -78,7 +81,7 @@ class Promotions : AppCompatActivity() {
     }
 
     private fun setUpRecyclerView() = binding.promotionsScreenRecyclerView.apply{
-        productAdapter = SimpleProductsAdapter(mCartViewModel)
+        productAdapter = SimpleProductsAdapter(mCartViewModel,mfavouriteproductViewModel)
         adapter = productAdapter
         layoutManager = LinearLayoutManager(this@Promotions)
     }

@@ -12,6 +12,8 @@ import com.example.essstore.cart.cartProduct
 import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common.BASE_URL
 import com.example.essstore.common.Common.BASE_URL_TWO
+import com.example.essstore.common.Common.PRODUCT_ADDED_TO_CART
+import com.example.essstore.common.Common.PRODUCT_ADDED_TO_FAVOURITE
 import com.example.essstore.common.Common.makeToast
 import com.example.essstore.databinding.BoxProductCardBinding
 import com.example.essstore.favourite.favouriteProduct
@@ -68,7 +70,7 @@ class BoxProductsAdapter (mCartViewModel: cartProductViewModel, mfavouriteViewMo
         holder.binding.boxProductCardAddToCart.setOnClickListener{
             makeToast(
                 holder.itemView.context,
-                "Product added to Cart!"
+                PRODUCT_ADDED_TO_CART
             )
             mCartViewModel.addProductToCart(
                 cartProduct(
@@ -103,6 +105,7 @@ class BoxProductsAdapter (mCartViewModel: cartProductViewModel, mfavouriteViewMo
                     selectedQuantity = 1
                 )
             )
+            makeToast(holder.itemView.context, PRODUCT_ADDED_TO_FAVOURITE)
         }
     }
 

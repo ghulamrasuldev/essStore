@@ -2,19 +2,22 @@ package com.example.essstore.data
 
 
 import android.content.DialogInterface
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.essstore.cart.cartProduct
 import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common.makeToast
 import com.example.essstore.databinding.CartProductCardBinding
+import com.squareup.picasso.Picasso
 
 class CartAdapter(mCartViewModel: cartProductViewModel): RecyclerView.Adapter<CartAdapter.cartViewHolder>(){
-    private var productList = emptyList<cartProduct>()
+    var productList = emptyList<cartProduct>()
     val mCartViewmodel = mCartViewModel
     class cartViewHolder (val binding: CartProductCardBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -35,6 +38,10 @@ class CartAdapter(mCartViewModel: cartProductViewModel): RecyclerView.Adapter<Ca
             cartProductPrice.text = "$ ${product.productPrice}"
             cartProductDescription.text = product.productDescription
             cartProductSelectedQuantity.text = product.selectedQuantity.toString()
+            var url = "${product.productImage}"
+//            url = "https://www.lays.com/sites/lays.com/files/2021-07/XL%20Lay%27s%20Flamin%27%20Hot.png"
+            Log.d("Box","$url")
+            Picasso.get().load(url).fit().centerCrop().into(cartProductImage)
         }
 
         holder.binding.cartProductDeleteItem.setOnClickListener{

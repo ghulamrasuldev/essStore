@@ -43,6 +43,16 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/favourite_no_product_in_cart"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="No Favourite Products!"
+        android:textColor="@color/white"
+        android:visibility="gone"/>
+
     <ProgressBar
         android:id="@+id/favourite_products_screen_progress_bar"
         android:layout_width="match_parent"

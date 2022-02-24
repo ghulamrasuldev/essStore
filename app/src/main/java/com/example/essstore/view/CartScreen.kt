@@ -2,6 +2,7 @@ package com.example.essstore.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.essstore.cart.cartProductViewModel
@@ -26,12 +27,11 @@ class CartScreen : AppCompatActivity() {
         setUpRecyclerView()
         mCartViewModel.readAllData.observe(this, androidx.lifecycle.Observer { product ->
             cartAdapter.setData(product)
+            binding.cartScreenNoProductInCart.isVisible = cartAdapter.productList.isEmpty()
         })
-
         binding.cartScreenBack.setOnClickListener{
             finish()
         }
-
         binding.cartScreenProceed.setOnClickListener{
 
             if (STATUS == NOT_LOGGED_IN){

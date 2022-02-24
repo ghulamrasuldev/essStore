@@ -1,29 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="220dp"
+    android:layout_width="150dp"
+    android:layout_height="200dp"
     android:background="@color/primary_color_accent"
-    android:padding="4dp"
     android:layout_margin="4dp"
     android:orientation="vertical">
 
     <!--Product Name-->
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/box_product_card_image"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
+            android:layout_width="130dp"
+            android:layout_height="90dp"
             android:background="@color/white"
             android:src="@drawable/sampleimage"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="130dp"
+            android:layout_height="90dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -35,8 +34,8 @@
                     android:id="@+id/box_product_card_title"
                     android:layout_width="0dp"
                     android:layout_weight="5"
-                    android:layout_height="wrap_content"
-                    android:text="Glasses"
+                    android:layout_height="30dp"
+                    android:text="Ghulam Rasool"
                     android:maxLength="10"
                     android:textSize="14sp"
                     android:fontFamily="@font/montserrat"
@@ -46,7 +45,7 @@
                     android:id="@+id/box_product_card_price"
                     android:layout_width="0dp"
                     android:layout_weight="2"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:text="$35"
                     android:textSize="14sp"
                     android:fontFamily="@font/montserrat"
@@ -55,14 +54,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="150dp"
-                android:layout_height="25dp"
+                android:layout_width="130dp"
+                android:layout_height="30dp"
                 android:gravity="center">
 
                 <TextView
                     android:id="@+id/box_product_card_description"
                     android:layout_width="0dp"
-                    android:layout_weight="5"
+                    android:layout_weight="9"
                     android:layout_height="25dp"
                     android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     android:textSize="10sp"
@@ -72,10 +71,11 @@
                     android:textColor="@color/black"/>
 
                 <ImageView
+                    android:layout_gravity="center"
                     android:id="@+id/box_product_card_favourite"
                     android:layout_width="0dp"
                     android:layout_weight="2"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20dp"
                     android:src="@drawable/icon_favourite"
                     android:background="?android:attr/selectableItemBackground"
                     android:clickable="true"/>

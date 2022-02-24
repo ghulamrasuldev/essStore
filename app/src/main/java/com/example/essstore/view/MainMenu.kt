@@ -33,6 +33,10 @@ class MainMenu : AppCompatActivity() {
         }
 
         //Listeners
+
+        binding.btnMenuPromotions.setOnClickListener{
+            nextScreenWithoutFinish(this, Promotions::class.java)
+        }
         binding.btnMenuLogin.setOnClickListener{
             nextScreenWithoutFinish(this, Login::class.java)
         }

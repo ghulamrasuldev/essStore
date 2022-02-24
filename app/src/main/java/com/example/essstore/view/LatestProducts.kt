@@ -20,6 +20,7 @@ import com.example.essstore.common.Common.nextScreenWithoutFinishAndExtras
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.SimpleProductsAdapter
 import com.example.essstore.databinding.ActivityLatestProductsBinding
+import com.example.essstore.favourite.favouriteProductViewModel
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -27,6 +28,7 @@ class LatestProducts : AppCompatActivity() {
     val TAG = "Latest Prodcts"
     private lateinit var STATUS: String
     lateinit var mCartViewModel: cartProductViewModel
+    lateinit var mfavouriteproductViewModel: favouriteProductViewModel
     private lateinit var binding: ActivityLatestProductsBinding
     private  lateinit var productAdapter: SimpleProductsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,6 +37,7 @@ class LatestProducts : AppCompatActivity() {
         STATUS = intent.getStringExtra(LOGIN_STATUS).toString()
         setContentView(binding.root)
         mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
+        mfavouriteproductViewModel = ViewModelProvider(this).get(favouriteProductViewModel::class.java)
         setUpRecyclerView()
         Log.d(TAG, "Running Fine")
         fetchData()
@@ -83,7 +86,7 @@ class LatestProducts : AppCompatActivity() {
     }
 
     private fun setUpRecyclerView() = binding.latestProductsScreenRecyclerView.apply{
-        productAdapter = SimpleProductsAdapter(mCartViewModel)
+        productAdapter = SimpleProductsAdapter(mCartViewModel, mfavouriteproductViewModel)
         adapter = productAdapter
         layoutManager = LinearLayoutManager(this@LatestProducts)
     }

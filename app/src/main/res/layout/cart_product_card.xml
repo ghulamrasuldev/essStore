@@ -92,6 +92,7 @@
                         android:gravity="center"
                         android:layoutDirection="ltr"
                         android:src="@drawable/icon_decrement"
+                        android:background="?android:attr/selectableItemBackground"
                         android:clickable="true"/>
 
                     <TextView
@@ -109,6 +110,7 @@
                         android:layout_width="36dp"
                         android:gravity="center"
                         android:layout_height="36dp"
+                        android:background="?android:attr/selectableItemBackground"
                         android:src="@drawable/icon_increment"/>
 
                 </LinearLayout>

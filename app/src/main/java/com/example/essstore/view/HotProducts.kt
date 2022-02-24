@@ -17,6 +17,7 @@ import com.example.essstore.common.Common.nextScreenWithoutFinishAndExtras
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.SimpleProductsAdapter
 import com.example.essstore.databinding.ActivityHotProductsBinding
+import com.example.essstore.favourite.favouriteProductViewModel
 import retrofit2.HttpException
 import java.io.IOException
 
@@ -24,6 +25,7 @@ class HotProducts : AppCompatActivity() {
     private val TAG = "Hot Products"
     private lateinit var STATUS: String
     lateinit var mCartViewModel: cartProductViewModel
+    lateinit var mfavouriteproductViewModel: favouriteProductViewModel
     private lateinit var binding: ActivityHotProductsBinding
     private  lateinit var productAdapter: SimpleProductsAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +35,7 @@ class HotProducts : AppCompatActivity() {
         STATUS = intent.getStringExtra(LOGIN_STATUS).toString()
 
         mCartViewModel = ViewModelProvider(this).get(cartProductViewModel::class.java)
+        mfavouriteproductViewModel = ViewModelProvider(this).get(favouriteProductViewModel::class.java)
 
         setUpRecyclerView()
         Log.d(TAG, "Running Fine")
@@ -82,7 +85,7 @@ class HotProducts : AppCompatActivity() {
     }
 
     private fun setUpRecyclerView() = binding.hotProductsScreenRecyclerView.apply{
-        productAdapter = SimpleProductsAdapter(mCartViewModel)
+        productAdapter = SimpleProductsAdapter(mCartViewModel, mfavouriteproductViewModel)
         adapter = productAdapter
         layoutManager = LinearLayoutManager(this@HotProducts)
     }

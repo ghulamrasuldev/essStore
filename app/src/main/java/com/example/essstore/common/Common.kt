@@ -23,7 +23,7 @@ object Common {
     val DISPLAY_TIME_TOO_LONG: Long = 3000
     //http://192.168.18.59:3000/
     //https://my.api.mockaroo.com/
-    val BASE_URL: String = "https://my.api.mockaroo.com/"
+    val BASE_URL: String = "http://192.168.18.59:3000/"
     val BASE_URL_TWO: String = "https://my.api.mockaroo.com/"
     const val GET_PRODUCTS : String = "products"
     const val HOT_PRODUCTS: String = "hot-products/"
@@ -34,6 +34,7 @@ object Common {
     const val GET_USER: String = "user"
     const val REGISTER_USER: String = "register/"
     const val LOGIN_USER: String = "login/"
+    const val CHECKOUT: String ="checkout/"
     //57b501f0
     const val API_KEY: String = "57b501f0"
     const val PAYMENT_METHOD: String = "Payment Method"

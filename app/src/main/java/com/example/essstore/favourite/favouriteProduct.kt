@@ -16,5 +16,6 @@ data class favouriteProduct (
     val productName: String,
     val productPrice: Int,
     val soldQuantity: Int,
-    var selectedQuantity: Int
+    var selectedQuantity: Int,
+    var img: String
 )

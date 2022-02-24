@@ -17,6 +17,7 @@ import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.registerUser
 import com.example.essstore.data.registeredUserResponse
 import com.example.essstore.databinding.ActivitySignupBinding
+import com.example.essstore.userInfo.userLoginResponse
 import retrofit2.HttpException
 import retrofit2.Response
 import java.io.IOException
@@ -35,7 +36,7 @@ class Signup : AppCompatActivity() {
 
         binding.btnSignupScreenSignup.setOnClickListener{
              lifecycleScope.launchWhenCreated {
-                    var response: Response<registeredUserResponse>
+                    var response: Response<userLoginResponse>
                     try {
                         response  = RetrofitInstance.api.registerUser(
                             registerUser(

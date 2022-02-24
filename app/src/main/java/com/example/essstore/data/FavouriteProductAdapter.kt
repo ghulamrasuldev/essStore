@@ -41,7 +41,7 @@ class FavouriteProductAdapter(mfavouriteProductViewModel: favouriteProductViewMo
             favouriteProductCardTitle.text = product.productName
             favouriteProductCardPrice.text = "$ ${product.productPrice}"
             favouriteProductCardDescription.text = product.productDescription
-            var url = "${product.productImage}"
+            var url = "${product.img}"
 //            url = "https://www.lays.com/sites/lays.com/files/2021-07/XL%20Lay%27s%20Flamin%27%20Hot.png"
             Log.d("Box","$url")
             Picasso.get().load(url).fit().centerCrop().into(favouriteProductCardImage)
@@ -60,7 +60,8 @@ class FavouriteProductAdapter(mfavouriteProductViewModel: favouriteProductViewMo
                     product.productName,
                     product.productPrice,
                     product.soldQuantity,
-                    selectedQuantity = 1
+                    selectedQuantity = 1,
+                    product.img
                 )
             )
             makeToast(holder.itemView.context, PRODUCT_ADDED_TO_CART)

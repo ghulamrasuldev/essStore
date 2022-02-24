@@ -34,4 +34,10 @@ class cartProductViewModel(application: Application): AndroidViewModel(applicati
             repository.updateProduct(id, selectedQuanitity)
         }
     }
+
+    fun deleteAll(){
+        viewModelScope.launch ( Dispatchers.IO ){
+            repository.deleteAll()
+        }
+    }
 }

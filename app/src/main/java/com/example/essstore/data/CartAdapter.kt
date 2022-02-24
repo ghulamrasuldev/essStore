@@ -38,7 +38,7 @@ class CartAdapter(mCartViewModel: cartProductViewModel): RecyclerView.Adapter<Ca
             cartProductPrice.text = "$ ${product.productPrice}"
             cartProductDescription.text = product.productDescription
             cartProductSelectedQuantity.text = product.selectedQuantity.toString()
-            var url = "${product.productImage}"
+            var url = "${product.img}"
 //            url = "https://www.lays.com/sites/lays.com/files/2021-07/XL%20Lay%27s%20Flamin%27%20Hot.png"
             Log.d("Box","$url")
             Picasso.get().load(url).fit().centerCrop().into(cartProductImage)

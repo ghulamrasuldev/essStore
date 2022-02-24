@@ -1,18 +1,18 @@
-package com.example.essstore.favourite
+package com.example.essstore.userInfo
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [favouriteProduct::class], version = 2, exportSchema = false)
-abstract class favouriteProductDatabase: RoomDatabase(){
-    abstract fun favouriteProductDAO(): favouriteProductDAO
+@Database(entities = [userLoginResponse::class], version = 3, exportSchema = false)
+abstract class userLoginDatabase: RoomDatabase(){
+    abstract fun userLoginDAO(): userLoginDAO
     companion object{
         @Volatile
-        private var INSTANCE: favouriteProductDatabase? = null
+        private var INSTANCE: userLoginDatabase? = null
 
-        fun getDatabase(context: Context) : favouriteProductDatabase {
+        fun getDatabase(context: Context) : userLoginDatabase {
             val tempInstance= INSTANCE
             if(tempInstance!=null){
                 return tempInstance
@@ -20,8 +20,8 @@ abstract class favouriteProductDatabase: RoomDatabase(){
             synchronized(this){
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    favouriteProductDatabase::class.java,
-                    "favourite"
+                    userLoginDatabase::class.java,
+                    "userLoginInfo"
                 ).fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 return instance

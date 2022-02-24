@@ -1,6 +1,7 @@
 package com.example.essstore.data
 
 import com.example.essstore.common.Common.ALL_PRODUCTS
+import com.example.essstore.common.Common.CHECKOUT
 import com.example.essstore.common.Common.GET_PROMOTIONS
 import com.example.essstore.common.Common.GET_USER
 import com.example.essstore.common.Common.GET_WISH_LIST
@@ -8,6 +9,7 @@ import com.example.essstore.common.Common.HOT_PRODUCTS
 import com.example.essstore.common.Common.LOGIN_USER
 import com.example.essstore.common.Common.NEW_ARRIVALS
 import com.example.essstore.common.Common.REGISTER_USER
+import com.example.essstore.userInfo.userLoginResponse
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -31,10 +33,13 @@ interface ProductInterface {
     suspend fun getUser(@Query("key") key: String): Response<user>
 
     @POST(REGISTER_USER)
-    suspend fun registerUser(@Body body: registerUser): Response<registeredUserResponse>
+    suspend fun registerUser(@Body body: registerUser): Response<userLoginResponse>
 
     @POST(LOGIN_USER)
-    suspend fun loginRegisteredUser(@Body body: loginUser): Response<registeredUserResponse>
+    suspend fun loginRegisteredUser(@Body body: loginUser): Response<userLoginResponse>
+
+    @POST(CHECKOUT)
+    suspend fun checkout(@Body order: orderCheckout, @Header("Authorization") auth: String): Response<orderCheckout>
 }
 
 //@Query("key") key: String

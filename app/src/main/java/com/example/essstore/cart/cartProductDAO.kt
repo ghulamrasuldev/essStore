@@ -20,4 +20,7 @@ interface cartProductDAO {
 
     @Query("UPDATE productsInCart SET selectedQuantity =:selectedQuantity WHERE id=:id")
     fun UpdateProduct(id: Int, selectedQuantity: Int)
+
+    @Query("DELETE FROM productsInCart")
+    fun deleteAll()
 }

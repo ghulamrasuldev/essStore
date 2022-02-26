@@ -35,6 +35,7 @@ object Common {
     const val REGISTER_USER: String = "register/"
     const val LOGIN_USER: String = "login/"
     const val CHECKOUT: String ="checkout/"
+    const val MAKE_REQUEST: String = "make-request/"
     //57b501f0
     const val API_KEY: String = "57b501f0"
     const val PAYMENT_METHOD: String = "Payment Method"

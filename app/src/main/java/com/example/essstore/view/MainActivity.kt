@@ -5,16 +5,40 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.lifecycle.ViewModelProvider
 import com.example.essstore.common.Common.DISPLAY_TIME_SHORT
+import com.example.essstore.common.Common.nextScreenWithFinish
+import com.example.essstore.data.user
 import com.example.essstore.databinding.ActivityMainBinding
+import com.example.essstore.userInfo.userLoginResponse
+import com.example.essstore.userInfo.userLoginViewModel
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var mUserViewModel: userLoginViewModel
+    var id = -1
+    var token =""
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        addAnimation()
-        nextScreen()
+        mUserViewModel = ViewModelProvider(this).get(userLoginViewModel::class.java)
+        if(isUserLoggedIn()){
+            nextScreenWithFinish(this, HomeScreen::class.java)
+        }else{
+            addAnimation()
+            nextScreen()
+        }
+    }
+
+    private fun isUserLoggedIn(): Boolean {
+        var userL: userLoginResponse? = null
+        mUserViewModel.readAllData.observe(this, androidx.lifecycle.Observer {users->
+            for (user in users){
+                userL = user
+            }
+        })
+        return userL!=null
     }
 
     //This function is responsible to navigate to Welcome Screen

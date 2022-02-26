@@ -11,6 +11,9 @@ import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common
 import com.example.essstore.common.Common.LOGGED_IN
 import com.example.essstore.common.Common.LOGIN_STATUS
+import com.example.essstore.common.Common.NOT_LOGGED_IN
+import com.example.essstore.common.Common.nextScreenWithFinish
+import com.example.essstore.common.Common.nextScreenWithFinishAffinity
 import com.example.essstore.common.Common.nextScreenWithFinishAffinityAndExtras
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.loginUser
@@ -32,8 +35,6 @@ class Login : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
         mUserViewModel = ViewModelProvider(this).get(userLoginViewModel::class.java)
-
-
 
         //Listeners
         binding.btnLoginScreenLogin.setOnClickListener{
@@ -62,6 +63,11 @@ class Login : AppCompatActivity() {
                     mUserViewModel.readAllData.observe( this@Login, androidx.lifecycle.Observer {product ->
                         Log.d("Login", "$product")
                     })
+
+                    Common.makeToast(
+                        this@Login,
+                        "Logged in successfully!"
+                    )
                     nextScreenWithFinishAffinityAndExtras(
                         this@Login,
                         HomeScreen::class.java,
@@ -73,16 +79,26 @@ class Login : AppCompatActivity() {
                     Toast.makeText(baseContext, "not working", Toast.LENGTH_SHORT)
                 }
             }
-
-            Common.makeToast(
-                this,
-                "Signed up successfully!"
-            )
         }
 
 
         binding.btnLoginScreenBack.setOnClickListener{
             finish()
+        }
+
+        binding.btnLoginScreenSignup.setOnClickListener{
+            nextScreenWithFinish(
+                this, Signup::class.java
+            )
+        }
+
+        binding.btnLoginScreenHome.setOnClickListener{
+            nextScreenWithFinishAffinityAndExtras(
+                this,
+                HomeScreen::class.java,
+                LOGIN_STATUS,
+                NOT_LOGGED_IN
+            )
         }
     }
 }

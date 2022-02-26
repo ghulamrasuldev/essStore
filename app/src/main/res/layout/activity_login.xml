@@ -95,6 +95,30 @@
             android:textSize="12sp"
             android:text="Don't have account? Click here!"
             android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_login_screen_signup"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat"
+            android:padding="16dp"
+            android:text="Signup"
+            android:background="@drawable/bg_button_ripple_effect"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_login_screen_home"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat"
+            android:padding="16dp"
+            android:text="GOTO STORE"
+            android:background="@drawable/bg_button_ripple_effect"/>
     </LinearLayout>
 
 </LinearLayout>

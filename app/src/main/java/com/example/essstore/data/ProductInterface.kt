@@ -7,6 +7,7 @@ import com.example.essstore.common.Common.GET_USER
 import com.example.essstore.common.Common.GET_WISH_LIST
 import com.example.essstore.common.Common.HOT_PRODUCTS
 import com.example.essstore.common.Common.LOGIN_USER
+import com.example.essstore.common.Common.MAKE_REQUEST
 import com.example.essstore.common.Common.NEW_ARRIVALS
 import com.example.essstore.common.Common.REGISTER_USER
 import com.example.essstore.userInfo.userLoginResponse
@@ -27,7 +28,7 @@ interface ProductInterface {
     suspend fun getAllProducts(@Query("key") key: String): Response<List<product>>
 
     @GET(GET_WISH_LIST)
-    suspend fun getWishList(@Query("key") key: String): Response<List<product>>
+    suspend fun getWishList(@Header("Authorization") auth: String): Response<List<wishListResponse>>
 
     @GET(GET_USER)
     suspend fun getUser(@Query("key") key: String): Response<user>
@@ -40,6 +41,9 @@ interface ProductInterface {
 
     @POST(CHECKOUT)
     suspend fun checkout(@Body order: orderCheckout, @Header("Authorization") auth: String): Response<orderCheckout>
+
+    @POST(MAKE_REQUEST)
+    suspend fun makeRequest(@Body request: makeRequest, @Header("Authorization") auth: String): Response<makeRequest>
 }
 
 //@Query("key") key: String

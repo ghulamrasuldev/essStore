@@ -37,28 +37,6 @@
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
             android:orientation="vertical">
-
-<!--            &lt;!&ndash;Name&ndash;&gt;-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Name"-->
-<!--                android:textSize="16sp"-->
-<!--                android:fontFamily="@font/montserrat_bold"-->
-<!--                android:textColor="@color/white"/>-->
-
-<!--            <EditText-->
-<!--                android:id="@+id/et_profile_screen_name"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:hint="Your Name Here"-->
-<!--                android:gravity="center"-->
-<!--                android:layout_marginTop="4dp"-->
-<!--                android:fontFamily="@font/montserrat"-->
-<!--                android:layout_marginBottom="4dp"-->
-<!--                android:padding="16dp"-->
-<!--                android:background="@drawable/bg_edit_text"/>-->
-
             <!--User Name-->
             <TextView
                 android:layout_width="match_parent"
@@ -195,10 +173,42 @@
                 android:textColor="@color/white"
                 android:fontFamily="@font/montserrat"
                 android:padding="16dp"
-                android:text="Update Information"
+                android:text="Sign up"
                 android:background="@drawable/bg_button_ripple_effect"/>
 
         </LinearLayout>
+
+        <TextView
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Already have account?"
+            android:textSize="16sp"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/white"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_signup_screen_login"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat"
+            android:padding="16dp"
+            android:text="Login"
+            android:background="@drawable/bg_button_ripple_effect"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_signup_screen_home"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat"
+            android:padding="16dp"
+            android:text="GOTO STORE"
+            android:background="@drawable/bg_button_ripple_effect"/>
 
     </LinearLayout>
 

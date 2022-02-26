@@ -13,18 +13,18 @@ class WishListAdapter : RecyclerView.Adapter<WishListAdapter.WishListViewHolder>
 
     inner class WishListViewHolder (val binding: WishListCardBinding): RecyclerView.ViewHolder(binding.root)
 
-    private val difCallBack= object : DiffUtil.ItemCallback<product>(){
-        override fun areItemsTheSame(oldItem: product, newItem: product): Boolean {
+    private val difCallBack= object : DiffUtil.ItemCallback<wishListResponse>(){
+        override fun areItemsTheSame(oldItem: wishListResponse, newItem: wishListResponse): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: product, newItem: product): Boolean {
+        override fun areContentsTheSame(oldItem: wishListResponse, newItem: wishListResponse): Boolean {
             return oldItem == newItem
         }
     }
 
     private val differ = AsyncListDiffer(this, difCallBack)
-    var products: List<product>
+    var products: List<wishListResponse>
         set(value) {
             differ.submitList(value)
         }
@@ -45,8 +45,8 @@ class WishListAdapter : RecyclerView.Adapter<WishListAdapter.WishListViewHolder>
 
         holder.binding.apply {
             val product = products[position]
-            wishListCardTitle.text = product.productName
-            wishListBranName.text = product.productName
+            wishListCardTitle.text = product.title
+            wishListBranName.text = product.brandName
         }
     }
 

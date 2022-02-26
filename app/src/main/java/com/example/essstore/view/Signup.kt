@@ -11,7 +11,10 @@ import androidx.lifecycle.lifecycleScope
 import com.example.essstore.common.Common
 import com.example.essstore.common.Common.LOGGED_IN
 import com.example.essstore.common.Common.LOGIN_STATUS
+import com.example.essstore.common.Common.NOT_LOGGED_IN
 import com.example.essstore.common.Common.makeToast
+import com.example.essstore.common.Common.nextScreenWithFinish
+import com.example.essstore.common.Common.nextScreenWithFinishAffinity
 import com.example.essstore.common.Common.nextScreenWithFinishAffinityAndExtras
 import com.example.essstore.data.RetrofitInstance
 import com.example.essstore.data.registerUser
@@ -75,6 +78,22 @@ class Signup : AppCompatActivity() {
 
         binding.btnSignupScreenBack.setOnClickListener{
             finish()
+        }
+
+        binding.btnSignupScreenHome.setOnClickListener{
+            nextScreenWithFinishAffinityAndExtras(
+                this,
+                HomeScreen::class.java,
+                LOGIN_STATUS,
+                NOT_LOGGED_IN
+            )
+        }
+
+        binding.btnSignupScreenLogin.setOnClickListener{
+            nextScreenWithFinish(
+                this,
+                Login::class.java
+            )
         }
     }
 }

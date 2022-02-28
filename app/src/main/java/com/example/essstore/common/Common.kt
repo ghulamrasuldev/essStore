@@ -21,8 +21,11 @@ object Common {
     val DISPLAY_TIME_LONG: Long= 2000
     val DISPLAY_TIME_SHORT: Long = 1000
     val DISPLAY_TIME_TOO_LONG: Long = 3000
+
+    val sharedPrefFile = "kotlinsharedpreference"
     //http://192.168.18.59:3000/
     //https://my.api.mockaroo.com/
+    //http://192.168.18.59:3000/
     val BASE_URL: String = "http://192.168.18.59:3000/"
     val BASE_URL_TWO: String = "https://my.api.mockaroo.com/"
     const val GET_PRODUCTS : String = "products"
@@ -32,10 +35,16 @@ object Common {
     const val ALL_PRODUCTS: String = "all-products/"
     const val GET_WISH_LIST: String = "wish-list/"
     const val GET_USER: String = "user"
+    const val USER: String ="user/"
+    const val UPDATE_USER: String = "user/update/"
     const val REGISTER_USER: String = "register/"
     const val LOGIN_USER: String = "login/"
     const val CHECKOUT: String ="checkout/"
     const val MAKE_REQUEST: String = "make-request/"
+    const val ORDERS: String = "orders/"
+    const val GET_PRODUCT: String ="product/1/"
+    var ACCESS_TOKEN: String =""
+    var USER_ID: String = ""
     //57b501f0
     const val API_KEY: String = "57b501f0"
     const val PAYMENT_METHOD: String = "Payment Method"
@@ -54,6 +63,12 @@ object Common {
     const val PHONE_REGX = "^((\\+92)|(0092))-{0,1}\\d{3}-{0,1}\\d{7}\$|^\\d{11}\$|^\\d{4}-\\d{7}\$"
 
     fun Context.nextScreenWithFinish(activity: Activity, classs : Class<*>) {
+        val intent = Intent(activity, classs)
+        startActivity(intent)
+        activity.finish()
+    }
+
+    fun Context.nextScreenWithFinishAndExtras(activity: Activity, classs : Class<*>, key: String, value: String) {
         val intent = Intent(activity, classs)
         startActivity(intent)
         activity.finish()

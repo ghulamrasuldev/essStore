@@ -12,6 +12,7 @@ import android.R
 import android.app.Notification
 import android.app.NotificationChannel
 import android.content.ContentValues
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Build
 import android.util.Log
@@ -21,9 +22,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.essstore.cart.cartProduct
 import com.example.essstore.cart.cartProductViewModel
+import com.example.essstore.common.Common
 import com.example.essstore.common.Common.LOGIN_STATUS
 import com.example.essstore.common.Common.PAYMENT_METHOD
 import com.example.essstore.common.Common.nextScreenWithoutFinishAndExtras
+import com.example.essstore.common.Common.sharedPrefFile
 import com.example.essstore.data.*
 import com.example.essstore.userInfo.userLoginViewModel
 import retrofit2.HttpException
@@ -159,10 +162,12 @@ class FinalReview : AppCompatActivity() {
             }
         })
 
-        mUserLoginModel.readAllData.observe(this, androidx.lifecycle.Observer {users->
-            id = users[0].id
-            token = users[0].tokens
-        })
+        val sharedPreferences: SharedPreferences = getSharedPreferences(sharedPrefFile,Context.MODE_PRIVATE)
+        val sharedPref: SharedPreferences =  sharedPreferences
+        id = sharedPref.getInt("id", -1)
+        token = sharedPref.getString("token", "").toString()
+
+
     }
 
 }

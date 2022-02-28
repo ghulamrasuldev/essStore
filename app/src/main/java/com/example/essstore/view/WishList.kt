@@ -1,6 +1,8 @@
 package com.example.essstore.view
 
 import android.content.ContentValues
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -33,8 +35,8 @@ class WishList : AppCompatActivity() {
         getData()
         setUpRecyclerView()
         Log.d(TAG, "Running Fine")
+        Log.d("token: ", "$token")
         fetchData()
-
         //Listeners
         binding.btnWishListBack.setOnClickListener{
             finish()
@@ -45,7 +47,7 @@ class WishList : AppCompatActivity() {
         lifecycleScope.launchWhenCreated {
             binding.wishListProgressBar.isVisible = true
             val response= try {
-                RetrofitInstance.api.getWishList("Bearer "+token)
+                RetrofitInstance.api_two.getWishList()
             } catch (e: IOException){
                 Log.e(ContentValues.TAG, "IOException: You might not have internet connection!")
                 binding.wishListProgressBar.isVisible = false
@@ -55,15 +57,19 @@ class WishList : AppCompatActivity() {
                 binding.wishListProgressBar.isVisible = false
                 return@launchWhenCreated
             }
-            if(response.isSuccessful && response.body()!=null){
+            if(response.isSuccessful && response.body()!=null ){
                 wishListAdapter.products = response.body()!!
                 binding.wishListProgressBar.isVisible = false
                 Log.d(ContentValues.TAG, "${response.raw().request.url}")
             }
+            else if  (response.body()==null){
+                Log.e(ContentValues.TAG, "Got Null Response")
+
+            }
             else{
                 Log.e(ContentValues.TAG, "IOException: Unexpected Response! Failed!")
                 binding.wishListProgressBar.isVisible = false
-
+                Log.d(ContentValues.TAG, "${response.raw().request.url}")
             }
         }
     }
@@ -75,10 +81,12 @@ class WishList : AppCompatActivity() {
     }
 
     fun getData(){
-        mUserViewModel.readAllData.observe(this, androidx.lifecycle.Observer {users->
-            id = users[0].id
-            token = users[0].tokens
-        })
+        val sharedPreferences: SharedPreferences = getSharedPreferences(
+            Common.sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val sharedPref: SharedPreferences =  sharedPreferences
+        id = sharedPref.getInt("id", -1)
+        token = sharedPref.getString("token", "").toString()
     }
 
 }

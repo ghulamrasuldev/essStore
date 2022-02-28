@@ -1,13 +1,22 @@
 package com.example.essstore.view
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.preference.PreferenceManager
+import android.util.Log
 import androidx.lifecycle.ViewModelProvider
+import com.example.essstore.R
+import com.example.essstore.common.Common
 import com.example.essstore.common.Common.DISPLAY_TIME_SHORT
+import com.example.essstore.common.Common.LOGGED_IN
+import com.example.essstore.common.Common.LOGIN_STATUS
 import com.example.essstore.common.Common.nextScreenWithFinish
+import com.example.essstore.common.Common.nextScreenWithFinishAndExtras
 import com.example.essstore.data.user
 import com.example.essstore.databinding.ActivityMainBinding
 import com.example.essstore.userInfo.userLoginResponse
@@ -18,13 +27,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mUserViewModel: userLoginViewModel
     var id = -1
     var token =""
+    private val sharedPrefFile = "kotlinsharedpreference"
+
 
     private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mUserViewModel = ViewModelProvider(this).get(userLoginViewModel::class.java)
         if(isUserLoggedIn()){
-            nextScreenWithFinish(this, HomeScreen::class.java)
+            nextScreenWithFinishAndExtras(this, HomeScreen::class.java, LOGIN_STATUS, LOGGED_IN)
         }else{
             addAnimation()
             nextScreen()
@@ -32,13 +43,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun isUserLoggedIn(): Boolean {
-        var userL: userLoginResponse? = null
-        mUserViewModel.readAllData.observe(this, androidx.lifecycle.Observer {users->
-            for (user in users){
-                userL = user
-            }
-        })
-        return userL!=null
+        val sharedPreferences: SharedPreferences = getSharedPreferences(sharedPrefFile,Context.MODE_PRIVATE)
+        val sharedPref: SharedPreferences=  sharedPreferences
+        id = sharedPref.getInt("id", -1)
+        token = sharedPref.getString("token", "").toString()
+        Common.ACCESS_TOKEN = token
+        Common.USER_ID = id.toString()
+        if (id == -1 && token == "" ){
+            Log.d("ID: ", id.toString())
+            Log.d("TOKEN: ", token)
+            return false
+        }
+        return true
     }
 
     //This function is responsible to navigate to Welcome Screen

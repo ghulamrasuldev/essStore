@@ -1,7 +1,9 @@
 package com.example.essstore.view
 
 import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -32,8 +34,8 @@ class SubmitWish : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding= ActivitySubmitWishBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        Log.d("token: ", "$token")
         mUserViewModel = ViewModelProvider(this).get(userLoginViewModel::class.java)
-
         getData()
         binding.requestProductSubmit.setOnClickListener{
 
@@ -63,6 +65,8 @@ class SubmitWish : AppCompatActivity() {
                         Common.LOGIN_STATUS,
                         LOGGED_IN
                     )
+                    Log.d("token: ", "$token")
+
                 }
                 else{
                     Toast.makeText(baseContext, "not working", Toast.LENGTH_SHORT)
@@ -76,10 +80,12 @@ class SubmitWish : AppCompatActivity() {
     }
 
 
-    fun getData(){
-        mUserViewModel.readAllData.observe(this, androidx.lifecycle.Observer {users->
-            id = users[0].id
-            token = users[0].tokens
-        })
+    private fun getData(){
+        val sharedPreferences: SharedPreferences = getSharedPreferences(
+            Common.sharedPrefFile,
+            Context.MODE_PRIVATE)
+        val sharedPref: SharedPreferences =  sharedPreferences
+        id = sharedPref.getInt("id", -1)
+        token = sharedPref.getString("token", "").toString()
     }
 }

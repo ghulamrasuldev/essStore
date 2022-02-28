@@ -1,6 +1,7 @@
 package com.example.essstore.view
 
 import android.content.ContentValues
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -9,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common
+import com.example.essstore.common.Common.ACCESS_TOKEN
 import com.example.essstore.common.Common.LOGGED_IN
 import com.example.essstore.common.Common.LOGIN_STATUS
 import com.example.essstore.common.Common.NOT_LOGGED_IN
@@ -25,10 +27,18 @@ import com.example.essstore.userInfo.userLoginViewModel
 import retrofit2.HttpException
 import retrofit2.Response
 import java.io.IOException
+import android.content.SharedPreferences
+
+import android.preference.PreferenceManager
+
+
+
 
 class Login : AppCompatActivity() {
+
     private lateinit var binding: ActivityLoginBinding
     lateinit var mUserViewModel: userLoginViewModel
+    private val sharedPrefFile = "kotlinsharedpreference"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,9 +66,23 @@ class Login : AppCompatActivity() {
                 }
                 if(response.isSuccessful && response.body()!=null){
 
+                    ACCESS_TOKEN = response.body()!!.tokens
+
+                    mUserViewModel.deleteAll()
+
                     mUserViewModel.addUser(
                         response.body()!!
                     )
+
+                    val sharedPreferences: SharedPreferences = getSharedPreferences(sharedPrefFile,Context.MODE_PRIVATE)
+                    val sharedPref:SharedPreferences.Editor =  sharedPreferences.edit()
+                    //TOKEN
+                    sharedPref.putString("token", response.body()!!.tokens)
+                    sharedPref.apply()
+                    //ID
+                    sharedPref.putInt("id", response.body()!!.id)
+                    sharedPref.apply()
+
 
                     mUserViewModel.readAllData.observe( this@Login, androidx.lifecycle.Observer {product ->
                         Log.d("Login", "$product")

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_color_bg"
+    android:padding="16dp"
+    android:layout_margin="4dp"
+    android:orientation="vertical">
+
+    <!--Product Name-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Order Date: "
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:background="@drawable/text_background_stroke"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/history_date"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text= "01/01/2015"
+            android:maxLength="10"
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:background="@drawable/text_background_stroke"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <!--Payment Method-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Payment: "
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:background="@drawable/text_background_stroke"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/payment_method"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="COD"
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:background="@drawable/text_background_stroke"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <!--No. of Products-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Products: "
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:background="@drawable/text_background_stroke"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/history_product_quantity"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:background="@drawable/text_background_stroke"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/history_see_details"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:text="See Details"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_button_ripple_effect"/>
+
+</LinearLayout>

@@ -14,6 +14,12 @@
         android:theme="@style/Theme.EssStore"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".view.HistoryOrderDetails"
+            android:exported="true" />
+        <activity
+            android:name=".view.History"
+            android:exported="true" />
+        <activity
             android:name=".view.GetPersonalInfo"
             android:exported="true" />
         <activity

@@ -56,19 +56,15 @@ class Signup : AppCompatActivity() {
                         return@launchWhenCreated
                     }
                     if(response.isSuccessful && response.body()!=null){
-                        nextScreenWithFinishAffinityAndExtras(
+                        nextScreenWithFinishAffinity(
                             this@Signup,
-                            HomeScreen::class.java,
-                            LOGIN_STATUS,
-                            LOGGED_IN
+                            Login::class.java
                         )
                     }
                     else{
                         Toast.makeText(baseContext, "not working", Toast.LENGTH_SHORT)
                     }
                 }
-
-
 
             makeToast(
                 this,

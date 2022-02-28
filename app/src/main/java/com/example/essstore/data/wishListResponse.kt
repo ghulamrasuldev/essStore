@@ -6,10 +6,10 @@ import com.google.gson.annotations.SerializedName
 data class wishListResponse(
     @SerializedName("brand_name")
     val brandName: String,
-    @SerializedName("id")
-    val id: Int,
     @SerializedName("productURL")
     val productURL: Any,
     @SerializedName("title")
-    val title: String
+    val title: String,
+    @SerializedName("user")
+    val user: Int
 )

@@ -1,7 +1,10 @@
 package com.example.essstore.view
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.preference.PreferenceManager
 import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import com.example.essstore.R
@@ -19,6 +22,8 @@ class MainMenu : AppCompatActivity() {
     private lateinit var STATUS: String
     private lateinit var mUserViewModel: userLoginViewModel
     private lateinit var mCartViewModel: cartProductViewModel
+    private val sharedPrefFile = "kotlinsharedpreference"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainMenuBinding.inflate(layoutInflater)
@@ -35,12 +40,20 @@ class MainMenu : AppCompatActivity() {
             binding.btnMenuLogout.isVisible = false
             binding.btnMenuProfile.isVisible = false
             binding.btnMenuSetting.isVisible = false
+            binding.btnMenuHistory.isVisible =false
         }else{
             binding.btnMenuLogin.isVisible = false
             binding.btnMenuSignup.isVisible = false
         }
 
         //Listeners
+
+        binding.btnMenuHistory.setOnClickListener{
+            nextScreenWithoutFinish(
+                this,
+                History::class.java
+            )
+        }
 
         binding.btnMenuPromotions.setOnClickListener{
             nextScreenWithoutFinish(this, Promotions::class.java)
@@ -90,6 +103,13 @@ class MainMenu : AppCompatActivity() {
         binding.btnMenuLogout.setOnClickListener{
             mCartViewModel.deleteAll()
             mUserViewModel.deleteAll()
+
+            val sharedPreferences: SharedPreferences = getSharedPreferences(sharedPrefFile,Context.MODE_PRIVATE)
+            val sharedPref: SharedPreferences =  sharedPreferences
+
+            sharedPref.edit().remove("id").apply()
+            sharedPref.edit().remove("token").apply()
+
             nextScreenWithFinishAffinity(
                 this,
                 Login::class.java

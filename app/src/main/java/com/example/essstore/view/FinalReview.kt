@@ -103,6 +103,7 @@ class FinalReview : AppCompatActivity() {
                         LOGIN_STATUS,
                         STATUS
                     )
+                    mCartViewModel.deleteAll()
                 }
                 else{
                     Toast.makeText(baseContext, "not working", Toast.LENGTH_SHORT)

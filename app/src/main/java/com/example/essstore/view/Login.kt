@@ -107,7 +107,10 @@ class Login : AppCompatActivity() {
 
 
         binding.btnLoginScreenBack.setOnClickListener{
-            finish()
+            nextScreenWithFinishAffinity(
+                this,
+                WelcomeScreen::class.java
+            )
         }
 
         binding.btnLoginScreenSignup.setOnClickListener{

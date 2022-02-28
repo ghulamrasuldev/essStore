@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.essstore.cart.cartProductViewModel
 import com.example.essstore.common.Common.LOGIN_STATUS
 import com.example.essstore.common.Common.NOT_LOGGED_IN
+import com.example.essstore.common.Common.makeToast
+import com.example.essstore.common.Common.nextScreenWithFinish
 import com.example.essstore.common.Common.nextScreenWithoutFinish
 import com.example.essstore.common.Common.nextScreenWithoutFinishAndExtras
 import com.example.essstore.data.CartAdapter
@@ -43,12 +45,18 @@ class CartScreen : AppCompatActivity() {
                 )
             }
             else{
-                nextScreenWithoutFinishAndExtras(
-                    this,
-                    SelectPaymentMethod::class.java,
-                    LOGIN_STATUS,
-                    STATUS
-                )
+                if (cartAdapter.productList.isEmpty()) {
+                    makeToast(this, "Please add products to cart!")
+                    finish()
+                }
+                else{
+                    nextScreenWithoutFinishAndExtras(
+                        this,
+                        SelectPaymentMethod::class.java,
+                        LOGIN_STATUS,
+                        STATUS
+                    )
+                }
             }
         }
     }

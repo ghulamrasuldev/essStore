@@ -73,7 +73,10 @@ class Signup : AppCompatActivity() {
         }
 
         binding.btnSignupScreenBack.setOnClickListener{
-            finish()
+            nextScreenWithFinishAffinity(
+                this,
+                WelcomeScreen::class.java
+            )
         }
 
         binding.btnSignupScreenHome.setOnClickListener{
